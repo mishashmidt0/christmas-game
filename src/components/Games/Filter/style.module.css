@@ -1,3 +1,139 @@
 .container {
+    border: 2px solid black;
+    max-width: 25%;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgba(118, 217, 199, 0.26);
+}
 
+.favorite button,
+.size button,
+.color button,
+.form button {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: 10px 7px;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.color button {
+    border: solid 1px rgba(25, 24, 24, 0.71);
+    border-radius: 5px;
+}
+
+.size button {
+    background-image: url("../../../data/assets/svg/ball.svg");
+    width: 50px;
+    height: 50px;
+    margin: 10px 7px;
+}
+
+.favorite button {
+    margin-left: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+}
+
+.form button:nth-child(1) {
+    background-image: url("../../../data/assets/svg/ball-2.svg");
+}
+
+.form button:nth-child(2) {
+    background-image: url("../../../data/assets/svg/bell.svg");
+}
+
+.form button:nth-child(3) {
+    background-image: url("../../../data/assets/svg/cone.svg");
+}
+
+.form button:nth-child(4) {
+    background-image: url("../../../data/assets/svg/snowflake.svg");
+}
+
+.form button:nth-child(5) {
+    background-image: url("../../../data/assets/svg/toy.svg");
+}
+
+.form button.active {
+    filter: invert(9%) sepia(63%) saturate(461%) hue-rotate(322deg) brightness(83%) contrast(88%);
+}
+
+.color button:nth-child(1) {
+    margin-left: 20px;
+    background-color: white;
+}
+
+.color button:nth-child(2) {
+    background-color: yellow;
+}
+
+.color button:nth-child(3) {
+    background-color: red;
+}
+
+.color button:nth-child(4) {
+    background-color: blue;
+}
+
+.color button:nth-child(5) {
+    background-color: green;
+}
+
+
+.color button.active::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 7px;
+    width: 20px;
+    height: 14px;
+    border: solid #fff;
+    border-width: 0 5px 5px 0;
+    transform: rotate(45deg);
+}
+
+.color button.active:nth-child(1)::after {
+    border-color: #666;
+}
+
+.color button.active:nth-child(2)::after {
+    border-color: #666;
+}
+
+
+.size button:nth-child(2) {
+    background-size: 40px 40px;
+}
+
+.size button:nth-child(3) {
+    background-size: 32px 32px;
+}
+
+.size button.active {
+    filter: invert(6%) sepia(63%) saturate(461%) hue-rotate(322deg) brightness(83%) contrast(88%);
+}
+
+
+.favorite button.active::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 16px;
+    height: 10px;
+    border: solid;
+    border-width: 0 5px 5px 0;
+    transform: rotate(45deg);
+    border-color: #666;
 }
