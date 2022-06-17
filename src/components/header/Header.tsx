@@ -57,7 +57,7 @@ export const Header = () => {
     return (
         <Box sx={{flexGrow: 1}}>
             <AppBar position="static">
-                <Toolbar variant={"dense"}>
+                <Toolbar variant={"regular"}>
 
                     <Grid container xs={8}>
 
