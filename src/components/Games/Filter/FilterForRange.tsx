@@ -1,10 +1,10 @@
 import React, {useCallback} from 'react';
-import s from "./style/styleValue.module.css"
+import s from "./style/styleRange.module.css"
 import {useDispatch, useSelector} from "react-redux";
 import {storeType} from "../../../store/redux";
 import {changeColor, changeFavorite, changeForm, changeSize, filterType, keyType, valueType} from "../../../store/filterSlice";
 
-export const FilterForValue = React.memo(() => {
+export const FilterForRange = React.memo(() => {
     const filters = useSelector<storeType, filterType>(state => state.filters)
     const dispatch = useDispatch()
 
@@ -36,12 +36,10 @@ export const FilterForValue = React.memo(() => {
 
     return (
         <div className={s.container}>
-            <h3>Фильтр по значению</h3>
+            <h3>Фильтр по диапазону</h3>
 
-            {createBlock("form", "Форма:", filters.form)}
-            {createBlock("color", "Цвет:", filters.color)}
-            {createBlock("size", "Размер:", filters.size)}
-            {createBlock("favorite", " Только любимые:", filters.favorite)}
+            {createBlock("form", "Количество экземпляров:", filters.form)}
+            {createBlock("color", "Год приобретения:", filters.color)}
 
         </div>
     );

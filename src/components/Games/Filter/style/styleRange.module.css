@@ -1,0 +1,7 @@
+.container {
+    border: 2px solid black;
+    max-width: 30%;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgba(118, 217, 199, 0.26);
+}

@@ -1,4 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit"
+import {changeFilter} from "./utilReducer";
 
 export enum FilterName {
     bell = "шар",
@@ -37,18 +38,21 @@ const initialState: filterType = {
     favorite: [{name: FilterName.favorite, isActive: false}]
 }
 
-const filterSlice = createSlice({
+export const filterSlice = createSlice({
     name: "filters",
     initialState: initialState,
     reducers: {
-        changeForm(state, action) {
-
+        changeForm(state, {payload}) {
+            return changeFilter(state, payload.name, payload.isActive, "form")
         },
-        changeColor(state, action) {
+        changeColor(state, {payload}) {
+            return changeFilter(state, payload.name, payload.isActive, "color")
         },
-        changeSize(state, action) {
+        changeSize(state, {payload}) {
+            return changeFilter(state, payload.name, payload.isActive, "size")
         },
-        changeFavorite(state, action) {
+        changeFavorite(state, {payload}) {
+            return changeFilter(state, payload.name, payload.isActive, "favorite")
         },
     }
 })
@@ -58,12 +62,14 @@ export default filterSlice.reducer;
 
 
 // type
+export type keyType = "form" | "color" | "size" | "favorite"
 export type valueType = {
     name: string
     isActive: boolean
 }
-
-export type filterType = { [key: string]: valueType[] }
+export type filterType = {
+    [key in keyType]: valueType[];
+};
 
 
 
