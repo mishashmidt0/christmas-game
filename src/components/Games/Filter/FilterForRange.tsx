@@ -3,15 +3,19 @@ import s from "./style/styleRange.module.css"
 import {useSelector} from "react-redux";
 import {storeType} from "../../../store/redux";
 import {RangeSlider} from "./range";
-import {changeAmount, changeYear, filterRangeType} from "../../../store/filterRangeSlice";
+import {changeAmount, changeYear} from "../../../store/filterRangeAndSortSlice";
 import {ActionCreatorWithPayload} from "@reduxjs/toolkit";
 
 export const FilterForRange = React.memo(() => {
-    const {amount, year} = useSelector<storeType, filterRangeType>(state => state.filterRange)
+    const  year = useSelector<storeType, number[]>(state => state.filter.year)
+    const  amount = useSelector<storeType, number[]>(state => state.filter.amount)
 
 
-    const createBlock = useCallback((title: string, number: number[], AC: ActionCreatorWithPayload<{ newValue: number[] }>, max: number, min: number) => <div
-        className={s.block}>
+    const createBlock = useCallback((title: string,
+                                     number: number[],
+                                     AC: ActionCreatorWithPayload<{ newValue: number[] }>,
+                                     max: number,
+                                     min: number) => <div className={s.block}>
         <p>{title}</p>
         <RangeSlider number={number} AC={AC} max={max} min={min}/>
     </div>, [])
