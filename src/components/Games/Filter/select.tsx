@@ -6,7 +6,6 @@ import Select, {SelectChangeEvent} from '@mui/material/Select';
 import {useDispatch, useSelector} from "react-redux";
 import {storeType} from "../../../store/redux";
 import {changeSort} from "../../../store/filterRangeAndSortSlice";
-import {Button} from "@mui/material";
 
 export const SelectComponent = React.memo(() => {
     const value = useSelector<storeType, string>(state => state.filter.sort)
