@@ -1,8 +1,11 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit"
-import filterReducer from "./filterSlice"
+import filterValueReducer from "./filterValueSlice"
+import filterRangeSlice from "./filterRangeSlice"
+
 
 const reducer = combineReducers({
-    filters: filterReducer
+    filterValue: filterValueReducer,
+    filterRange: filterRangeSlice
 })
 
 

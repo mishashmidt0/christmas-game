@@ -1,4 +1,4 @@
-import {filterType, keyType} from "./filterSlice";
+import {filterType, keyType} from "./filterValueSlice";
 
 
 export const changeFilter = (state: filterType, name: string, isActive: boolean, key: keyType) => {

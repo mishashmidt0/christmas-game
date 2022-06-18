@@ -38,8 +38,8 @@ const initialState: filterType = {
     favorite: [{name: FilterName.favorite, isActive: false}]
 }
 
-export const filterSlice = createSlice({
-    name: "filters",
+export const filterValueSlice = createSlice({
+    name: "filterValue",
     initialState: initialState,
     reducers: {
         changeForm(state, {payload}) {
@@ -57,8 +57,8 @@ export const filterSlice = createSlice({
     }
 })
 
-export const {changeForm, changeFavorite, changeSize, changeColor} = filterSlice.actions;
-export default filterSlice.reducer;
+export const {changeForm, changeFavorite, changeSize, changeColor} = filterValueSlice.actions;
+export default filterValueSlice.reducer;
 
 
 // type

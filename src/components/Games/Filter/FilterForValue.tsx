@@ -2,10 +2,10 @@ import React, {useCallback} from 'react';
 import s from "./style/styleValue.module.css"
 import {useDispatch, useSelector} from "react-redux";
 import {storeType} from "../../../store/redux";
-import {changeColor, changeFavorite, changeForm, changeSize, filterType, keyType, valueType} from "../../../store/filterSlice";
+import {changeColor, changeFavorite, changeForm, changeSize, filterType, keyType, valueType} from "../../../store/filterValueSlice";
 
 export const FilterForValue = React.memo(() => {
-    const filters = useSelector<storeType, filterType>(state => state.filters)
+    const filters = useSelector<storeType, filterType>(state => state.filterValue)
     const dispatch = useDispatch()
 
     const changeFiler = (key: keyType, name: string, isActive: boolean) => {

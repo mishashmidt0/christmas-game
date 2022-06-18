@@ -1,4 +1,4 @@
-import {changeColor, changeFavorite, changeForm, changeSize, FilterName, filterSlice, filterType} from "../filterSlice";
+import {changeColor, changeFavorite, changeForm, changeSize, FilterName, filterValueSlice, filterType} from "../filterValueSlice";
 
 let initialState: filterType
 
@@ -25,22 +25,22 @@ beforeEach(() => {
 });
 
 test("should be change isActive from form toys", () => {
-    const endState = filterSlice.reducer(initialState, changeForm({name: FilterName.bell, isActive: true}))
+    const endState = filterValueSlice.reducer(initialState, changeForm({name: FilterName.bell, isActive: true}))
     expect(endState.form[0].name).toBe("шар")
     expect(endState.form[0].isActive).toBe(true)
 })
 test("should be change isActive from color", () => {
-    const endState = filterSlice.reducer(initialState, changeColor({name: FilterName.red, isActive: true}))
+    const endState = filterValueSlice.reducer(initialState, changeColor({name: FilterName.red, isActive: true}))
     expect(endState.color[2].name).toBe("красный")
     expect(endState.color[2].isActive).toBe(true)
 })
 test("should be change isActive from size", () => {
-    const endState = filterSlice.reducer(initialState, changeSize({name: FilterName.small, isActive: true}))
+    const endState = filterValueSlice.reducer(initialState, changeSize({name: FilterName.small, isActive: true}))
     expect(endState.size[2].name).toBe("малый")
     expect(endState.size[2].isActive).toBe(true)
 })
 test("should be change isActive from favorite", () => {
-    const endState = filterSlice.reducer(initialState, changeFavorite({name: FilterName.favorite, isActive: true}))
+    const endState = filterValueSlice.reducer(initialState, changeFavorite({name: FilterName.favorite, isActive: true}))
     expect(endState.favorite[0].name).toBe("favorite")
     expect(endState.favorite[0].isActive).toBe(true)
 })
