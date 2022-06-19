@@ -29,7 +29,6 @@ const filterRangeAndSortSlice = createSlice({
 export const {changeAmount, changeYear, changeSort, resetRange} = filterRangeAndSortSlice.actions;
 export default filterRangeAndSortSlice.reducer;
 
-export type keyTypeForFilterRangeAndSort = "count" | "year" | "sort";
 
 // type
 export type filterRangeAndSortType = {

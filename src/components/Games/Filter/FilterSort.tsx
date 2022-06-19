@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import s from "./style/styleSort.module.css"
 import {Button} from "@mui/material";
 import {SelectComponent} from "./select";
@@ -9,11 +9,11 @@ import {resetValue} from "../../../store/filterValueSlice";
 export const FilterSort = React.memo(() => {
     const dispatch = useDispatch()
 
-    const reset = () => {
+    const reset = useCallback(() => {
         dispatch(changeSort({value: ""}))
         dispatch(resetValue())
         dispatch(resetRange())
-    }
+    }, [dispatch])
 
     return (
         <div className={s.container}>
