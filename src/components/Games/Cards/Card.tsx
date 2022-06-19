@@ -1,11 +1,12 @@
 import React, {FC} from 'react';
 import s from "./styleCards.module.css"
 import {dataType} from "../../../store/cardsSlice";
+import {setImage} from "./setImage";
 
 
 export const Card: FC<dataType> = React.memo(({num, name, year, color, size, favorite, shape, count}) => {
 
-    const img = require(`../../../data/assets/toys/${num}.png`)
+    const img = setImage(num)
 
     return (
         <div className={s.containerCard}>
