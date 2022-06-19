@@ -48,8 +48,6 @@ export const sort = (filteredArr: dataType[], sortKey: string) => {
             return filteredArr.sort((a, b) => {
                 return (a.name < b.name) ? 1 : -1
             })
-
-
         case "22":
             return filteredArr.sort((a, b) => {
                 return +a.count - +b.count
@@ -63,5 +61,9 @@ export const sort = (filteredArr: dataType[], sortKey: string) => {
     }
 }
 
-
-
+export const search = (filteredArr: dataType[], textSearch: string) => {
+    if (!textSearch) return filteredArr
+    const regexp = new RegExp(`${textSearch}`, 'gi')
+    
+    return filteredArr.filter((item) => regexp.test(item.name))
+}

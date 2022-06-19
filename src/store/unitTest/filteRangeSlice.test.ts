@@ -1,4 +1,4 @@
-import filterRangeSlice, {changeAmount, changeSort, changeYear, filterRangeAndSortType} from "../filterRangeAndSortSlice";
+import filterRangeSlice, {changeAmount, changeSort, changeYear,changeSearch,filterRangeAndSortType} from "../filterRangeAndSortSlice";
 
 
 let initialState: filterRangeAndSortType
@@ -7,7 +7,8 @@ beforeEach(() => {
         initialState = {
             count: [1, 12],
             year: [1940, 2020],
-            sort: ""
+            sort: "",
+            search: ""
         }
 
     }
@@ -24,4 +25,8 @@ test("should be change year", () => {
 test("should be change sort", () => {
     const endState = filterRangeSlice(initialState, changeSort({value: "10"}))
     expect(endState.sort).toBe("10")
+})
+test("should be change search", () => {
+    const endState = filterRangeSlice(initialState, changeSearch({value: "red"}))
+    expect(endState.search).toBe("red")
 })

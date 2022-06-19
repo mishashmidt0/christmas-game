@@ -4,7 +4,8 @@ import {createSlice} from "@reduxjs/toolkit"
 const initialState: filterRangeAndSortType = {
     count: [1, 12],
     year: [1940, 2020],
-    sort: ''
+    sort: '',
+    search: '',
 }
 
 const filterRangeAndSortSlice = createSlice({
@@ -20,13 +21,16 @@ const filterRangeAndSortSlice = createSlice({
         changeSort(state, {payload}) {
             return {...state, sort: payload.value}
         },
+        changeSearch(state, {payload}) {
+            return {...state, search: payload.value}
+        },
         resetRange() {
             return {...initialState}
         },
     }
 })
 
-export const {changeAmount, changeYear, changeSort, resetRange} = filterRangeAndSortSlice.actions;
+export const {changeAmount, changeYear, changeSort, resetRange, changeSearch} = filterRangeAndSortSlice.actions;
 export default filterRangeAndSortSlice.reducer;
 
 
@@ -35,6 +39,7 @@ export type filterRangeAndSortType = {
     count: number[],
     year: number[],
     sort: string
+    search: string
 };
 export type keyRangeType = keyof filterRangeAndSortType;
 

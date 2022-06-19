@@ -6,7 +6,7 @@ import {Dispatch} from "@reduxjs/toolkit";
 import {storeType} from "../../../store/redux";
 import {Preloader} from "./Preloader";
 import {Card} from "./Card";
-import {allFilters, sort} from "./ustilFiltersAndSorting";
+import {allFilters, search, sort} from "./ustilFiltersAndSorting";
 
 
 export const Cards = React.memo(() => {
@@ -24,11 +24,12 @@ export const Cards = React.memo(() => {
 
     const sorting = sort(filteredArr, filter.sort)
 
+    const searching = search(sorting, filter.search)
 
     if (!cards.length) return <Preloader/>
     return (
         <div className={s.containerCards}>
-            {sorting.map((c => <Card {...c} key={c.num}/>))}
+            {searching.map((c => <Card {...c} key={c.num}/>))}
         </div>
     );
 });

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 import {alpha, styled} from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
@@ -8,6 +8,10 @@ import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import {Button, Grid, IconButton} from "@mui/material";
 import {useNavigate} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {storeType} from "../../store/redux";
+import {Dispatch} from "@reduxjs/toolkit";
+import {changeSearch} from "../../store/filterRangeAndSortSlice";
 
 const Search = styled('div')(({theme}) => ({
     position: 'relative',
@@ -23,7 +27,6 @@ const Search = styled('div')(({theme}) => ({
         width: 'auto',
     },
 }));
-
 
 const SearchIconWrapper = styled('div')(({theme}) => ({
     padding: theme.spacing(0, 2),
@@ -53,7 +56,16 @@ const StyledInputBase = styled(InputBase)(({theme}) => ({
 }));
 
 export const Header = () => {
+    const dispath = useDispatch<Dispatch<any>>()
     const navigate = useNavigate();
+    const search = useSelector<storeType, string>(state => state.filter.search)
+
+
+    const dispatchSearch = (e: ChangeEvent<HTMLInputElement>) => {
+        dispath(changeSearch({value: e.currentTarget.value}))
+    }
+
+
     return (
         <Box sx={{flexGrow: 1}}>
             <AppBar position="static">
@@ -75,6 +87,8 @@ export const Header = () => {
                         <StyledInputBase
                             placeholder="Search…"
                             inputProps={{'aria-label': 'search'}}
+                            value={search}
+                            onChange={dispatchSearch}
                         />
                     </Search>
                 </Toolbar>
