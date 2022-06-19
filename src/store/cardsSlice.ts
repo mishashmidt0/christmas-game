@@ -1,7 +1,9 @@
-import {createSlice} from "@reduxjs/toolkit"
+import {createSlice, Dispatch} from "@reduxjs/toolkit"
+import {cardsApi} from "../api/cards-api";
 
 const initialState: dataType[] = []
 
+//slice
 const cardsSlice = createSlice({
     name: "cardsSlice",
     initialState: initialState,
@@ -11,13 +13,17 @@ const cardsSlice = createSlice({
         },
     }
 })
-// action
-export const {setCards} = cardsSlice.actions;
 export default cardsSlice.reducer;
 
-// thunk
-const setCardsTC = ()=> (dispatch)=>{
+// action
+export const {setCards} = cardsSlice.actions;
 
+
+// thunk
+export const setCardsTC = () => (dispatch: Dispatch<any>) => {
+    cardsApi.setCards().then(res => {
+        dispatch(setCards({state: res}))
+    })
 }
 
 
@@ -32,6 +38,7 @@ export  type dataType = {
     size: string,
     favorite: boolean,
 }
+export type keyDataType = keyof dataType
 
 
 

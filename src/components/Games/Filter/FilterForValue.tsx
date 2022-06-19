@@ -10,7 +10,7 @@ export const FilterForValue = React.memo(() => {
 
     const changeFiler = (key: keyType, name: string, isActive: boolean) => {
         switch (key) {
-            case "form":
+            case "shape":
                 return dispatch(changeForm({name, isActive}));
             case "color":
                 return dispatch(changeColor({name, isActive}));
@@ -38,7 +38,7 @@ export const FilterForValue = React.memo(() => {
         <div className={s.container}>
             <h3>Фильтр по значению</h3>
 
-            {createBlock("form", "Форма:", filters.form)}
+            {createBlock("shape", "Форма:", filters.shape)}
             {createBlock("color", "Цвет:", filters.color)}
             {createBlock("size", "Размер:", filters.size)}
             {createBlock("favorite", " Только любимые:", filters.favorite)}

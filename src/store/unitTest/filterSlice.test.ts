@@ -4,7 +4,7 @@ let initialState: filterType
 
 beforeEach(() => {
     initialState = {
-        form: [{name: FilterName.bell, isActive: false},
+        shape: [{name: FilterName.bell, isActive: false},
             {name: FilterName.handbell, isActive: false},
             {name: FilterName.cone, isActive: false},
             {name: FilterName.snowflake, isActive: false},
@@ -26,8 +26,8 @@ beforeEach(() => {
 
 test("should be change isActive from form toys", () => {
     const endState = filterValueSlice.reducer(initialState, changeForm({name: FilterName.bell, isActive: true}))
-    expect(endState.form[0].name).toBe("шар")
-    expect(endState.form[0].isActive).toBe(true)
+    expect(endState.shape[0].name).toBe("шар")
+    expect(endState.shape[0].isActive).toBe(true)
 })
 test("should be change isActive from color", () => {
     const endState = filterValueSlice.reducer(initialState, changeColor({name: FilterName.red, isActive: true}))

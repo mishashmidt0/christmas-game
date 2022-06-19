@@ -59,15 +59,13 @@ export const Header = () => {
             <AppBar position="static">
                 <Toolbar variant={"regular"}>
 
-                    <Grid container xs={8}>
-
+                    <Grid container>
                         <IconButton onClick={() => navigate("/")} color={"inherit"}>
                             <AcUnitIcon color={"inherit"} fontSize={"large"}/>
                         </IconButton>
 
                         <Button variant="text" color={"inherit"} onClick={() => navigate("/games")}>ИГРУШКИ</Button>
                         <Button variant="text" color={"inherit"} onClick={() => navigate("/ChristmasTree")}>ЁЛКА</Button>
-
                     </Grid>
 
                     <Search>

@@ -4,7 +4,7 @@ import Slider from '@mui/material/Slider';
 import {FC, useCallback} from "react";
 import {useDispatch} from "react-redux";
 import {ActionCreatorWithPayload} from "@reduxjs/toolkit";
-
+import s from "./style/styleRange.module.css"
 function valuetext(value: number) {
     return `${value}`;
 }
@@ -30,8 +30,8 @@ export const RangeSlider: FC<RangeSlider> = React.memo(({number, AC, max, min}) 
 
     return (
         <div>
-            <span>{start}</span>
-            <Box sx={{width: 250}}>
+            <span className={s.count}>{start}</span>
+            <Box sx={{width: 230}}>
                 <Slider
                     min={min}
                     max={max}
@@ -42,7 +42,7 @@ export const RangeSlider: FC<RangeSlider> = React.memo(({number, AC, max, min}) 
                     getAriaValueText={valuetext}
                 />
             </Box>
-            <span>{end}</span>
+            <span className={s.count}>{end}</span>
         </div>
     );
 })

@@ -9,7 +9,11 @@ body {
 
 .App {
     height: 100vh;
-    background-color: rgba(68, 165, 240, 0.76);
+
+}
+
+.hidden {
+    overflow: hidden;
 }
 
 code {

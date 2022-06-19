@@ -1,7 +1,7 @@
 import {dataType} from "../store/cardsSlice";
 
 
-const data: dataType[] = [
+export const data: dataType[] = [
     {
         num: '1',
         name: 'Большой шар с рисунком',

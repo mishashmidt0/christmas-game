@@ -9,7 +9,7 @@
 .favorite button,
 .size button,
 .color button,
-.form button {
+.shape button {
     position: relative;
     width: 40px;
     height: 40px;
@@ -46,27 +46,27 @@
     border-radius: 5px;
 }
 
-.form button:nth-child(1) {
+.shape button:nth-child(1) {
     background-image: url("../../../../data/assets/svg/ball-2.svg");
 }
 
-.form button:nth-child(2) {
+.shape button:nth-child(2) {
     background-image: url("../../../../data/assets/svg/bell.svg");
 }
 
-.form button:nth-child(3) {
+.shape button:nth-child(3) {
     background-image: url("../../../../data/assets/svg/cone.svg");
 }
 
-.form button:nth-child(4) {
+.shape button:nth-child(4) {
     background-image: url("../../../../data/assets/svg/snowflake.svg");
 }
 
-.form button:nth-child(5) {
+.shape button:nth-child(5) {
     background-image: url("../../../../data/assets/svg/toy.svg");
 }
 
-.form button.active {
+.shape button.active {
     filter: invert(9%) sepia(63%) saturate(461%) hue-rotate(322deg) brightness(83%) contrast(88%);
 }
 
@@ -141,14 +141,14 @@
     border-color: #666;
 }
 
-.form button::after,
+.shape button::after,
 .size button::after,
 .favorite button::after,
 .color button::after {
     content: '';
 }
 
-.form,
+.shape,
 .color {
     height: 50px;
 }

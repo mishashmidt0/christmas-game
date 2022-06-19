@@ -3,13 +3,16 @@ import s from "./style/styleSort.module.css"
 import {Button} from "@mui/material";
 import {SelectComponent} from "./select";
 import {useDispatch} from "react-redux";
-import {changeSort} from "../../../store/filterRangeAndSortSlice";
+import {changeSort, resetRange} from "../../../store/filterRangeAndSortSlice";
+import {resetValue} from "../../../store/filterValueSlice";
 
 export const FilterSort = React.memo(() => {
     const dispatch = useDispatch()
 
     const reset = () => {
         dispatch(changeSort({value: ""}))
+        dispatch(resetValue())
+        dispatch(resetRange())
     }
 
     return (

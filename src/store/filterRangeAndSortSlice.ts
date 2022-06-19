@@ -2,7 +2,7 @@ import {createSlice} from "@reduxjs/toolkit"
 
 
 const initialState: filterRangeAndSortType = {
-    amount: [1, 12],
+    count: [1, 12],
     year: [1940, 2020],
     sort: ''
 }
@@ -12,7 +12,7 @@ const filterRangeAndSortSlice = createSlice({
     initialState: initialState,
     reducers: {
         changeAmount(state, {payload}) {
-            return {...state, amount: [...payload.newValue]}
+            return {...state, count: [...payload.newValue]}
         },
         changeYear(state, {payload}) {
             return {...state, year: [...payload.newValue]}
@@ -20,20 +20,23 @@ const filterRangeAndSortSlice = createSlice({
         changeSort(state, {payload}) {
             return {...state, sort: payload.value}
         },
+        resetRange() {
+            return {...initialState}
+        },
     }
 })
 
-export const {changeAmount, changeYear, changeSort} = filterRangeAndSortSlice.actions;
+export const {changeAmount, changeYear, changeSort, resetRange} = filterRangeAndSortSlice.actions;
 export default filterRangeAndSortSlice.reducer;
 
+export type keyTypeForFilterRangeAndSort = "count" | "year" | "sort";
 
 // type
 export type filterRangeAndSortType = {
-    amount: number[],
+    count: number[],
     year: number[],
     sort: string
 };
-
-
+export type keyRangeType = keyof filterRangeAndSortType;
 
 

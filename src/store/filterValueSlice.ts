@@ -19,7 +19,7 @@ export enum FilterName {
 }
 
 const initialState: filterType = {
-    form: [{name: FilterName.bell, isActive: false},
+    shape: [{name: FilterName.bell, isActive: false},
         {name: FilterName.handbell, isActive: false},
         {name: FilterName.cone, isActive: false},
         {name: FilterName.snowflake, isActive: false},
@@ -43,7 +43,7 @@ export const filterValueSlice = createSlice({
     initialState: initialState,
     reducers: {
         changeForm(state, {payload}) {
-            return changeFilter(state, payload.name, payload.isActive, "form")
+            return changeFilter(state, payload.name, payload.isActive, "shape")
         },
         changeColor(state, {payload}) {
             return changeFilter(state, payload.name, payload.isActive, "color")
@@ -54,15 +54,18 @@ export const filterValueSlice = createSlice({
         changeFavorite(state, {payload}) {
             return changeFilter(state, payload.name, payload.isActive, "favorite")
         },
+        resetValue() {
+            return {...initialState}
+        },
     }
 })
 
-export const {changeForm, changeFavorite, changeSize, changeColor} = filterValueSlice.actions;
+export const {changeForm, changeFavorite, changeSize, changeColor, resetValue} = filterValueSlice.actions;
 export default filterValueSlice.reducer;
 
 
 // type
-export type keyType = "form" | "color" | "size" | "favorite"
+export type keyType = "shape" | "color" | "size" | "favorite"
 export type valueType = {
     name: string
     isActive: boolean

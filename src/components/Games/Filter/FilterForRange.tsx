@@ -8,7 +8,7 @@ import {ActionCreatorWithPayload} from "@reduxjs/toolkit";
 
 export const FilterForRange = React.memo(() => {
     const  year = useSelector<storeType, number[]>(state => state.filter.year)
-    const  amount = useSelector<storeType, number[]>(state => state.filter.amount)
+    const  amount = useSelector<storeType, number[]>(state => state.filter.count)
 
 
     const createBlock = useCallback((title: string,
