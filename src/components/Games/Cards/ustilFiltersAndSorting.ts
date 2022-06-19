@@ -61,9 +61,10 @@ export const sort = (filteredArr: dataType[], sortKey: string) => {
     }
 }
 
+// Поиск по тексту
 export const search = (filteredArr: dataType[], textSearch: string) => {
     if (!textSearch) return filteredArr
-    const regexp = new RegExp(`${textSearch}`, 'gi')
-    
+    const regexp = new RegExp(`${textSearch}`, "i")
+
     return filteredArr.filter((item) => regexp.test(item.name))
 }

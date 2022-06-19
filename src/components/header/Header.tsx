@@ -12,7 +12,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {storeType} from "../../store/redux";
 import {Dispatch} from "@reduxjs/toolkit";
 import {changeSearch} from "../../store/filterRangeAndSortSlice";
-
+import s from "./style.module.css"
 const Search = styled('div')(({theme}) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
@@ -66,33 +66,34 @@ export const Header = () => {
     }
 
 
-    return (
-        <Box sx={{flexGrow: 1}}>
-            <AppBar position="static">
-                <Toolbar variant={"regular"}>
+    return (<div className={s.container}>
+            <Box sx={{flexGrow: 1}}>
+                <AppBar position="static">
+                    <Toolbar variant={"regular"}>
 
-                    <Grid container>
-                        <IconButton onClick={() => navigate("/")} color={"inherit"}>
-                            <AcUnitIcon color={"inherit"} fontSize={"large"}/>
-                        </IconButton>
+                        <Grid container>
+                            <IconButton onClick={() => navigate("/")} color={"inherit"}>
+                                <AcUnitIcon color={"inherit"} fontSize={"large"}/>
+                            </IconButton>
 
-                        <Button variant="text" color={"inherit"} onClick={() => navigate("/games")}>ИГРУШКИ</Button>
-                        <Button variant="text" color={"inherit"} onClick={() => navigate("/ChristmasTree")}>ЁЛКА</Button>
-                    </Grid>
+                            <Button variant="text" color={"inherit"} onClick={() => navigate("/games")}>ИГРУШКИ</Button>
+                            <Button variant="text" color={"inherit"} onClick={() => navigate("/ChristmasTree")}>ЁЛКА</Button>
+                        </Grid>
 
-                    <Search>
-                        <SearchIconWrapper>
-                            <SearchIcon/>
-                        </SearchIconWrapper>
-                        <StyledInputBase
-                            placeholder="Search…"
-                            inputProps={{'aria-label': 'search'}}
-                            value={search}
-                            onChange={dispatchSearch}
-                        />
-                    </Search>
-                </Toolbar>
-            </AppBar>
-        </Box>
+                        <Search>
+                            <SearchIconWrapper>
+                                <SearchIcon/>
+                            </SearchIconWrapper>
+                            <StyledInputBase
+                                placeholder="Search…"
+                                inputProps={{'aria-label': 'search'}}
+                                value={search}
+                                onChange={dispatchSearch}
+                            />
+                        </Search>
+                    </Toolbar>
+                </AppBar>
+            </Box>
+        </div>
     );
 }

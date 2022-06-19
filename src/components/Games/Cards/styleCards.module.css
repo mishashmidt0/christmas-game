@@ -11,6 +11,7 @@
     gap: 20px;
     justify-content: center;
     align-items: start;
+    background: rgba(56, 162, 241, 0.45);
 }
 
 .containerCard {
