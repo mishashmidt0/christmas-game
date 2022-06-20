@@ -1,108 +1,107 @@
 .preloader {
-    height: 80vh;
-    display: flex;
-    align-items: start;
-    justify-content: center;
+  height: 80vh;
+  display: flex;
+  align-items: start;
+  justify-content: center;
 }
 
 .containerCards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    align-items: start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: start;
 }
 
 .containerCard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 304px;
-    height: 280px;
-    padding: 0;
-    border-radius: 10px;
-    border: 1px solid #278D9F;
-    background-color: rgba(118, 217, 199, 0.26);
-    backdrop-filter: blur(6px);
-   -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 304px;
+  height: 280px;
+  padding: 0;
+  border-radius: 10px;
+  border: 1px solid #278d9f;
+  background-color: rgba(118, 217, 199, 0.26);
+  backdrop-filter: blur(6px);
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  text-align: center;
 }
 
 .containerCard img {
-    width: 90px;
-    height: 112px;
-    object-fit: contain;
-    pointer-events: none;
+  width: 90px;
+  height: 112px;
+  object-fit: contain;
+  pointer-events: none;
 }
 
 .cardHeader {
-    width: 100%;
-    font-size: 20px;
-    font-stretch: condensed;
-    padding-left: 10px;
+  width: 100%;
+  font-size: 20px;
+  font-stretch: condensed;
+  padding-left: 10px;
 }
 
 .cardDescriptionContainer {
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
 }
 
 .cardDescription {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    pointer-events: none;
-    line-height: 1;
-    user-select: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+  line-height: 1;
+  user-select: none;
 }
 
 .cardDescription li {
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    font-weight: bold;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .ribbon {
-    position: absolute;
-    top: 210px;
-    width: 80px;
-    height: 40px;
-    background: #24C5DB;
-    left: -8px;
-    cursor: pointer;
+  position: absolute;
+  top: 210px;
+  width: 80px;
+  height: 40px;
+  background: #24c5db;
+  left: -8px;
+  cursor: pointer;
 }
 
 .ribbon::before,
 .ribbon::after {
-    content: "";
-    position: absolute;
-    height: 0;
-    width: 0;
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
 }
 
 .ribbon:before {
-    border-bottom: 8px solid #14455b;
-    border-left: 8px solid transparent;
-    top: -8px;
-    left: 0;
+  border-bottom: 8px solid #14455b;
+  border-left: 8px solid transparent;
+  top: -8px;
+  left: 0;
 }
 
 .ribbon:after {
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-left: 15px solid #24C5DB;
-    right: -15px;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 15px solid #24c5db;
+  right: -15px;
 }
 
 .containerCard.active .ribbon {
-    background: #CBB77A;
+  background: #cbb77a;
 }
 
 .containerCard.active .ribbon:after {
-    border-left: 15px solid #CBB77A;
+  border-left: 15px solid #cbb77a;
 }
-
