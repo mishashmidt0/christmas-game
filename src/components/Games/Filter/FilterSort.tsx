@@ -5,6 +5,8 @@ import {SelectComponent} from "./select";
 import {useDispatch} from "react-redux";
 import {changeSort, resetRange} from "../../../store/filterRangeAndSortSlice";
 import {resetValue} from "../../../store/filterValueSlice";
+import {resetIsActiveToys} from "../../../store/appSlice";
+import {resetActiveCards} from "../../../store/cardsSlice";
 
 export const FilterSort = React.memo(() => {
     const dispatch = useDispatch()
@@ -13,6 +15,8 @@ export const FilterSort = React.memo(() => {
         dispatch(changeSort({value: ""}))
         dispatch(resetValue())
         dispatch(resetRange())
+        dispatch(resetIsActiveToys())
+        dispatch(resetActiveCards())
     }, [dispatch])
 
     return (

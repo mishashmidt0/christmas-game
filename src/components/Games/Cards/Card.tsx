@@ -1,16 +1,26 @@
-import React, {FC} from 'react';
+import React, {FC, useCallback} from 'react';
 import s from "./styleCards.module.css"
 import {cardsType, chooseCard} from "../../../store/cardsSlice";
 import {setImage} from "./setImage";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {Dispatch} from "@reduxjs/toolkit";
+import {changeActiveToys} from "../../../store/appSlice";
+import {storeType} from "../../../store/redux";
 
 
 export const Card: FC<cardsType> = React.memo(({num, name, year, color, size, favorite, shape, count, isChoose}) => {
     const dispatch = useDispatch<Dispatch>()
-    const dispatchIsChooseCard = () => {
+    let activeToys = useSelector<storeType, number>(state => state.app.activeToys)
+
+    const dispatchIsChooseCard = useCallback(() => {
         dispatch(chooseCard({id: num, value: !isChoose}))
-    }
+        if (!isChoose) {
+            dispatch(changeActiveToys({value: ++activeToys}))
+        } else {
+            dispatch(changeActiveToys({value: --activeToys}))
+        }
+    }, [dispatch, isChoose,activeToys])
+
 
     const img = setImage(num)
     return (

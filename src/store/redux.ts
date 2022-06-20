@@ -3,11 +3,13 @@ import filterValueReducer from "./filterValueSlice"
 import filterRangeAndSortSlice from "./filterRangeAndSortSlice"
 import cardsSlice from "./cardsSlice";
 import thunk from "redux-thunk";
+import appSlice from "./appSlice";
 
 const reducer = combineReducers({
     filterValue: filterValueReducer,
     filter: filterRangeAndSortSlice,
     cards: cardsSlice,
+    app: appSlice,
 })
 
 
@@ -17,8 +19,6 @@ export const store = configureStore({
 })
 
 export type storeType = ReturnType<typeof reducer>
-
-// export const store = createStore(reducers, applyMiddleware(thunk))
 
 // @ts-ignore
 window.store = store

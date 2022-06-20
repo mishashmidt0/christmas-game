@@ -8,7 +8,9 @@ export const FilterForValue = React.memo(() => {
     const filters = useSelector<storeType, filterType>(state => state.filterValue)
     const dispatch = useDispatch()
 
-    const changeFiler = (key: keyType, name: string, isActive: boolean) => {
+
+    // Принимаем фильтр который установил пользователь
+    const changeFiler = useCallback((key: keyType, name: string, isActive: boolean) => {
         switch (key) {
             case "shape":
                 return dispatch(changeForm({name, isActive}));
@@ -19,30 +21,25 @@ export const FilterForValue = React.memo(() => {
             case "favorite":
                 return dispatch(changeFavorite({name, isActive}));
         }
-    }
+    }, [])
 
 
-    const createLine = useCallback((arr: valueType[], key: keyType) => arr.map((el, i) =>
-        <button key={i} className={el.isActive ? s.active : s.diActive} data-filter={el.name} onClick={() => changeFiler(key, el.name, !el.isActive)}/>
-    ), [filters])
-
-
-    const createBlock = (key: keyType, title: string, arr: valueType[]) => {
+    const createBlock = useCallback((key: keyType, title: string, arr: valueType[]) => {
         return <div className={s[key]}>
             <>{title}</>
-            {createLine(arr, key)}
+            {arr.map((el, i) => <button key={i}
+                                        className={el.isActive ? s.active : s.diActive} data-filter={el.name}
+                                        onClick={() => changeFiler(key, el.name, !el.isActive)}/>)}
         </div>
-    }
+    }, [filters])
 
     return (
         <div className={s.container}>
             <h3>Фильтр по значению</h3>
-
             {createBlock("shape", "Форма:", filters.shape)}
             {createBlock("color", "Цвет:", filters.color)}
             {createBlock("size", "Размер:", filters.size)}
             {createBlock("favorite", " Только любимые:", filters.favorite)}
-
         </div>
     );
 });

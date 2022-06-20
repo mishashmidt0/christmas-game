@@ -17,12 +17,15 @@ const appSlice = createSlice({
         changeActiveToys(state, {payload: {value}}) {
             return {...state, activeToys: value}
         },
+        resetIsActiveToys(state) {
+            return {...state, activeToys: 0}
+        },
     }
 })
 export default appSlice.reducer;
 
 // action
-export const {changeHeaderHidden, changeActiveToys} = appSlice.actions;
+export const {changeHeaderHidden, changeActiveToys,resetIsActiveToys} = appSlice.actions;
 
 
 // type

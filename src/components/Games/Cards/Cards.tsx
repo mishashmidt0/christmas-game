@@ -26,10 +26,6 @@ export const Cards = React.memo(() => {
 
     const searching = search(sorting, filter.search)
 
-
-
-
-
     if (!cards.length) return <Preloader/>
     return (
         <div className={s.containerCards}>

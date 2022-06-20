@@ -2,4 +2,30 @@
     width: 100%;
     position: fixed;
     z-index: 10;
+
+}
+
+.select {
+    margin: 0 20px 0 20px;
+    width: 48px;
+    height: 60px;
+    background-image: url("../../data/assets/svg/ball-2.svg");
+    background-size: 48px 60px;
+    background-position: left -8px;
+    background-repeat: no-repeat;
+    transition: .3s;
+}
+
+.select span {
+    margin: 0 5px 0 5px;
+    display: inline-block;
+    min-width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 4px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    background-color: rgba(49, 213, 241, 0.91);
 }

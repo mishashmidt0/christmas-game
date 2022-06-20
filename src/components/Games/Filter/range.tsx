@@ -1,14 +1,14 @@
 import * as React from 'react';
+import {FC, useCallback} from 'react';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
-import {FC, useCallback} from "react";
 import {useDispatch} from "react-redux";
 import {ActionCreatorWithPayload} from "@reduxjs/toolkit";
 import s from "./style/styleRange.module.css"
+
 function valuetext(value: number) {
     return `${value}`;
 }
-
 
 type RangeSlider = {
     number: number[]

@@ -7,9 +7,7 @@ import {changeAmount, changeYear} from "../../../store/filterRangeAndSortSlice";
 import {ActionCreatorWithPayload} from "@reduxjs/toolkit";
 
 export const FilterForRange = React.memo(() => {
-    const  year = useSelector<storeType, number[]>(state => state.filter.year)
-    const  amount = useSelector<storeType, number[]>(state => state.filter.count)
-
+    const {year, count} = useSelector<storeType, { year: number[], count: number[] }>(state => state.filter)
 
     const createBlock = useCallback((title: string,
                                      number: number[],
@@ -24,7 +22,7 @@ export const FilterForRange = React.memo(() => {
     return (
         <div className={s.container}>
             <h3>Фильтр по диапазону</h3>
-            {createBlock("Количество экземпляров:", amount, changeAmount, 12, 1)}
+            {createBlock("Количество экземпляров:", count, changeAmount, 12, 1)}
             {createBlock("Год приобретения:", year, changeYear, 2020, 1940)}
         </div>
     );

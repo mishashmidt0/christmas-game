@@ -11,15 +11,18 @@ const cardsSlice = createSlice({
         setCards(state, {payload}) {
             return payload.state.map((c: dataType) => ({...c, isChoose: false}))
         },
-        chooseCard(state, {payload:{id,value}}) {
+        chooseCard(state, {payload: {id, value}}) {
             return state.map((c: cardsType) => c.num === id ? {...c, isChoose: value} : c)
+        },
+        resetActiveCards(state) {
+            return state.map((c: cardsType) => ({...c, isChoose: false}))
         },
     }
 })
 export default cardsSlice.reducer;
 
 // action
-export const {setCards, chooseCard} = cardsSlice.actions;
+export const {setCards, chooseCard, resetActiveCards} = cardsSlice.actions;
 
 
 // thunk
