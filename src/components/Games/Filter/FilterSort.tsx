@@ -8,7 +8,7 @@ import {resetValue} from "../../../store/filterValueSlice";
 import {resetIsActiveToys} from "../../../store/appSlice";
 import {resetActiveCards} from "../../../store/cardsSlice";
 
-export const FilterSort = React.memo(() => {
+export const FilterSort = () => {
     const dispatch = useDispatch()
 
     const reset = useCallback(() => {
@@ -27,5 +27,5 @@ export const FilterSort = React.memo(() => {
             <Button variant="contained" color={"primary"} onClick={reset}>Сброс фильтров</Button>
         </div>
     );
-});
+};
 

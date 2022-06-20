@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {storeType} from "../../../store/redux";
 import {changeColor, changeFavorite, changeForm, changeSize, filterType, keyType, valueType} from "../../../store/filterValueSlice";
 
-export const FilterForValue = React.memo(() => {
+export const FilterForValue = () => {
     const filters = useSelector<storeType, filterType>(state => state.filterValue)
     const dispatch = useDispatch()
 
@@ -42,5 +42,5 @@ export const FilterForValue = React.memo(() => {
             {createBlock("favorite", " Только любимые:", filters.favorite)}
         </div>
     );
-});
+};
 

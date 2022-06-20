@@ -6,7 +6,8 @@ import {RangeSlider} from "./range";
 import {changeAmount, changeYear} from "../../../store/filterRangeAndSortSlice";
 import {ActionCreatorWithPayload} from "@reduxjs/toolkit";
 
-export const FilterForRange = React.memo(() => {
+export const FilterForRange = () => {
+
     const {year, count} = useSelector<storeType, { year: number[], count: number[] }>(state => state.filter)
 
     const createBlock = useCallback((title: string,
@@ -26,5 +27,5 @@ export const FilterForRange = React.memo(() => {
             {createBlock("Год приобретения:", year, changeYear, 2020, 1940)}
         </div>
     );
-});
+};
 

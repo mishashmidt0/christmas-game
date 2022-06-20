@@ -4,7 +4,7 @@ import {FilterForRange} from "./FilterForRange";
 import s from "./style/styleFilters.module.css"
 import {FilterSort} from "./FilterSort";
 
-export const FiltersContainer = React.memo(() => {
+export const FiltersContainer = () => {
     return (
         <div className={s.container}>
             <FilterForValue/>
@@ -12,5 +12,5 @@ export const FiltersContainer = React.memo(() => {
             <FilterSort/>
         </div>
     );
-});
+};
 

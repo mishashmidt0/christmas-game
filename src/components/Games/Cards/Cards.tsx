@@ -9,7 +9,7 @@ import {Card} from "./Card";
 import {allFilters, search, sort} from "./ustilFiltersAndSorting";
 
 
-export const Cards = React.memo(() => {
+export const Cards =() => {
     const dispatch = useDispatch<Dispatch<any>>()
     const {cards, filterValue, filter} = useSelector<storeType, storeType>(state => state)
 
@@ -32,5 +32,5 @@ export const Cards = React.memo(() => {
             {searching.map((c => <Card {...c} key={c.num}/>))}
         </div>
     );
-});
+};
 

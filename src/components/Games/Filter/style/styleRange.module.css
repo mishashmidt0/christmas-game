@@ -1,9 +1,12 @@
 .container {
-    border: 2px solid black;
+    border: 1px solid black;
     width: 350px;
     padding: 10px;
     border-radius: 8px;
     background-color: rgba(118, 217, 199, 0.26);
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);;
 }
 
 .block div {
