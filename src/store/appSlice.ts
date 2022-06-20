@@ -1,50 +1,35 @@
 import {createSlice, Dispatch} from "@reduxjs/toolkit"
 import {cardsApi} from "../api/cards-api";
 
-const initialState: cardsType[] = []
+const initialState: appType = {
+    headerHidden: false,
+    activeToys: 0
+}
 
 //slice
-const cardsSlice = createSlice({
-    name: "cardsSlice",
+const appSlice = createSlice({
+    name: "appSlice",
     initialState: initialState,
     reducers: {
-        setCards(state, {payload}) {
-            return payload.state.map((c: dataType) => ({...c, isChoose: false}))
+        changeHeaderHidden(state, {payload: {value}}) {
+            return {...state, headerHidden: value}
         },
-        chooseCard(state, {payload:{id,value}}) {
-            return state.map((c: cardsType) => c.num === id ? {...c, isChoose: value} : c)
+        changeActiveToys(state, {payload: {value}}) {
+            return {...state, activeToys: value}
         },
     }
 })
-export default cardsSlice.reducer;
+export default appSlice.reducer;
 
 // action
-export const {setCards, chooseCard} = cardsSlice.actions;
-
-
-// thunk
-export const setCardsTC = () => (dispatch: Dispatch<any>) => {
-    cardsApi.setCards().then(res => {
-        dispatch(setCards({state: res}))
-    })
-}
+export const {changeHeaderHidden, changeActiveToys} = appSlice.actions;
 
 
 // type
-export  type dataType = {
-    num: string,
-    name: string,
-    count: string,
-    year: string,
-    shape: string,
-    color: string,
-    size: string,
-    favorite: boolean,
+export type appType = {
+    headerHidden: boolean
+    activeToys: number
 }
-export type isChooseType = { isChoose: boolean }
-export type cardsType = dataType & isChooseType
-
-export type keyDataType = keyof dataType
 
 
 

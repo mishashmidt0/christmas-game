@@ -1,42 +1,24 @@
-import cardsSlice, {cardsType, chooseCard, dataType, setCards} from "../cardsSlice";
+import appSlice, {appType, changeActiveToys, changeHeaderHidden} from "../appSlice";
 
-let initialState: cardsType[]
+let initialState: appType
 
 beforeEach(() => {
-    initialState = []
+    initialState = {
+        headerHidden: false,
+        activeToys: 0
+    }
 });
 
-test("should de set new cards", () => {
-    const endState = cardsSlice(initialState, setCards({
-        state: [{
-            num: '1',
-            name: 'Большой шар с рисунком',
-            count: '2',
-            year: '1960',
-            shape: 'шар',
-            color: 'желтый',
-            size: 'большой',
-            favorite: false,
-        },]
-    }))
+test("should be change headerHidden", () => {
+    const endState = appSlice(initialState, changeHeaderHidden({value: true}))
 
-    expect(endState[0].name).toBe("Большой шар с рисунком")
+    expect(endState.headerHidden).toBe(true)
 })
 
-test("should de change choose a card", () => {
-    initialState = [{
-        num: '1',
-        name: 'Большой шар с рисунком',
-        count: '2',
-        year: '1960',
-        shape: 'шар',
-        color: 'желтый',
-        size: 'большой',
-        favorite: false,
-        isChoose: false
-    },]
+test("should be change activeToys", () => {
+    const endState = appSlice(initialState, changeActiveToys({value: 10}))
 
-    const endState = cardsSlice(initialState, chooseCard({id: "1", value: true}))
-
-    expect(endState[0].isChoose).toBe(true)
+    expect(endState.activeToys).toBe(10)
 })
+
+
