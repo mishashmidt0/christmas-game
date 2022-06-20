@@ -3,7 +3,7 @@ import s from "./style/mainStyle.module.css"
 import {Button, Typography} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 
-export const Main = () => {
+export const Main = React.memo(() => {
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -12,7 +12,6 @@ export const Main = () => {
         return () => {
             if (app) app.classList.remove("hidden")
         }
-
     })
 
     return (
@@ -28,5 +27,5 @@ export const Main = () => {
             <Button variant="contained" onClick={() => navigate("/games")}>Играть</Button>
         </div>
     );
-};
+});
 

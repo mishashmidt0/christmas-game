@@ -7,6 +7,7 @@ import {FilterSort} from "./FilterSort";
 export const FiltersContainer = () => {
     return (
         <div className={s.container}>
+
             <FilterForValue/>
             <FilterForRange/>
             <FilterSort/>

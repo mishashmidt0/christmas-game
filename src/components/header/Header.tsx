@@ -1,4 +1,4 @@
-import React, {ChangeEvent} from 'react';
+import React, {ChangeEvent, useEffect} from 'react';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 import {alpha, styled} from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
@@ -56,14 +56,14 @@ const StyledInputBase = styled(InputBase)(({theme}) => ({
 }));
 
 export const Header = () => {
-    const dispath = useDispatch<Dispatch<any>>()
+    const dispatch = useDispatch<Dispatch<any>>()
     const navigate = useNavigate();
     const search = useSelector<storeType, string>(state => state.filter.search)
-
-
     const dispatchSearch = (e: ChangeEvent<HTMLInputElement>) => {
-        dispath(changeSearch({value: e.currentTarget.value}))
+        dispatch(changeSearch({value: e.currentTarget.value}))
     }
+
+
 
 
     return (<div className={s.container}>
