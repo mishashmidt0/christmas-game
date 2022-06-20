@@ -1,6 +1,6 @@
 ## App Christmas-game
 
-[Demo Christmas-game](https://todolist-seven-rho.vercel.app)
+[Demo Christmas-game](https://christmas-game-taupe.vercel.app/games)
 
 The first part of the Christmas game allows you to choose toys, you can filter them by shape, color, size and favorite. There is also sorting by date, quantity, alphabetically and in order!
 
