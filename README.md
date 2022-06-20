@@ -6,6 +6,10 @@ The first part of the Christmas game allows you to choose toys, you can filter t
 
 Also included are unit tests.
 
+### First part of the project
+
+![](assetsReadme/viu.gif)
+
     Welcome link
 
 ![img_1.png](assetsReadme/img_1.png)
