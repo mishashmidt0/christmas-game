@@ -24,7 +24,7 @@ export const Cards = () => {
 
     const filteredArr = useMemo(() => cards.filter(card => {
         return allFilters(card, filterValue, filter)
-    }), [cards, filterValue, filter])
+    }), [cards, filterValue, filter.count, filter.year])
 
     const sorting = useMemo(() => sort(filteredArr, filter.sort), [filteredArr, filter.sort])
 
