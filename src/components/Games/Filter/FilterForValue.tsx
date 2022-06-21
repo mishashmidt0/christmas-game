@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import s from './style/styleValue.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { storeType } from '../../../store/redux';

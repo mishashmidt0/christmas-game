@@ -20,6 +20,9 @@ export const Cards = () => {
     dispatch(setCardsTC());
   }, []);
 
+  // Здесь массив карты проходят через 3 стадии, фильтр по значени, по сортировке и по поиску
+
+  // Получаем массив карт которые проходят по выбранным значениям
   const filteredArr = useMemo(
     () =>
       cards.filter(card => {
@@ -28,22 +31,24 @@ export const Cards = () => {
     [cards, filterValue, filter.count, filter.year],
   );
 
+  // Далее Получаем массив карт которые проходят по сортировке
   const sorting = useMemo(
     () => sort(filteredArr, filter.sort),
     [filteredArr, filter.sort],
   );
 
+  // И получаем массив карт которые проходят по поиску
   const searching = useMemo(
     () => search(sorting, filter.search),
-    [filteredArr, filter.search],
+    [sorting, filter.search, filter.sort],
+  );
+
+  // Получаем окончательный список карточек
+  const tsxCards = useMemo(
+    () => searching.map(c => <Card {...c} key={c.num} />),
+    [searching, filter.sort],
   );
 
   if (!cards.length) return <Preloader />;
-  return (
-    <div className={s.containerCards}>
-      {searching.map(c => (
-        <Card {...c} key={c.num} />
-      ))}
-    </div>
-  );
+  return <div className={s.containerCards}>{tsxCards}</div>;
 };

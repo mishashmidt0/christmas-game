@@ -8,7 +8,7 @@ import { Games } from './Games';
 function App() {
   return (
     <BrowserRouter>
-      <div className='App'>
+      <div className="App">
         <Header />
         <Routes>
           <Route path={'/'} element={<Main />} />

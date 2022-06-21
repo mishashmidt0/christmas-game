@@ -76,6 +76,5 @@ export type valueType = {
   name: string;
   isActive: boolean;
 };
-export type filterType = {
-  [key in keyType]: valueType[];
-};
+
+export type filterType = Record<keyType, valueType[]>;

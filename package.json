@@ -28,6 +28,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "pr": "prettier --write .",
     "test": "jest",
     "eject": "react-scripts eject"
   },

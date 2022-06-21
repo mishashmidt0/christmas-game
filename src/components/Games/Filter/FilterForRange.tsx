@@ -7,9 +7,9 @@ import { changeAmount, changeYear } from '../../../store/filterRangeAndSortSlice
 import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
 
 export const FilterForRange = () => {
-  const { year, count } = useSelector<storeType, { year: number[]; count: number[] }>(
-    state => state.filter,
-  );
+  const year = useSelector<storeType, number[]>(state => state.filter.year);
+
+  const count = useSelector<storeType, number[]>(state => state.filter.count);
 
   const createBlock = useCallback(
     (
@@ -26,7 +26,6 @@ export const FilterForRange = () => {
     ),
     [],
   );
-
   return (
     <div className={s.container}>
       <h3>Фильтр по диапазону</h3>
