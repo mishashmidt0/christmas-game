@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bc0dd099-35c0-4c72-9d33-b8519386b74a" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="SCSS File" />
+        <option value="CSS File" />
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2AfivRLT2t4UR6pgovt3TvyjIFB" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/code/RS-School/Christmas/my-app/src/components/Tree&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;E:/code/RS-School/Christmas/my-app/node_modules/react-scripts&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;E:\\code\\RS-School\\Christmas\\my-app\\node_modules\\typescript\\lib&quot;,
+    &quot;two.files.diff.last.used.file&quot;: &quot;E:/code/RS-School/Christmas/my-app/src/components/header/style.module.scss&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\code\RS-School\Christmas\my-app\src\components\Tree" />
+      <recent name="E:\code\RS-School\Christmas\my-app\src\store\unitTest" />
+      <recent name="E:\code\RS-School\Christmas\my-app\src\store" />
+      <recent name="E:\code\RS-School\Christmas\my-app\src\components\Games\Filter\style" />
+      <recent name="E:\code\RS-School\Christmas\my-app\src\components\Games\Filter" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\code\RS-School\Christmas\my-app\src\store" />
+      <recent name="E:\code\RS-School\Christmas\my-app" />
+      <recent name="E:\code\RS-School\Christmas\my-app\assetsReadme" />
+      <recent name="E:\code\RS-School\Christmas\my-app\src\components\Games\Cards" />
+      <recent name="E:\code\RS-School\Christmas\my-app\src\api" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.pr">
+    <configuration name="should be change activeToys" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/store/unitTest/appSlice.test.ts" />
+      <test-names>
+        <test-name value="should be change activeToys" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="should be change headerHidden" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/store/unitTest/appSlice.test.ts" />
+      <test-names>
+        <test-name value="should be change headerHidden" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="should be reset active cards" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/store/unitTest/cardsSlice.test.ts" />
+      <test-names>
+        <test-name value="should be reset active cards" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="should be reset activeToys" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/store/unitTest/appSlice.test.ts" />
+      <test-names>
+        <test-name value="should be reset activeToys" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="pr" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="pr" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.pr" />
+        <item itemvalue="Jest.should be reset active cards" />
+        <item itemvalue="Jest.should be reset activeToys" />
+        <item itemvalue="Jest.should be change activeToys" />
+        <item itemvalue="Jest.should be change headerHidden" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bc0dd099-35c0-4c72-9d33-b8519386b74a" name="Changes" comment="" />
+      <created>1655407276418</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1655407276418</updated>
+      <workItem from="1655407280792" duration="7896000" />
+      <workItem from="1655492311206" duration="289000" />
+      <workItem from="1655493582161" duration="12110000" />
+      <workItem from="1655539027380" duration="21015000" />
+      <workItem from="1655581757234" duration="880000" />
+      <workItem from="1655628853905" duration="28602000" />
+      <workItem from="1655712368612" duration="13198000" />
+      <workItem from="1655744441470" duration="4986000" />
+      <workItem from="1655753439534" duration="1408000" />
+      <workItem from="1655841582829" duration="1968000" />
+      <workItem from="1655908545958" duration="296000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
