@@ -3,10 +3,15 @@ import s from './style/styleRange.module.css';
 import { useSelector } from 'react-redux';
 import { storeType } from '../../../store/redux';
 import { RangeSlider } from './range';
-import { changeAmount, changeYear } from '../../../store/filterRangeAndSortSlice';
+import { changeAmount, changeYear, Count, Year } from '../../../store/filterRangeAndSortSlice';
 import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
 
 export const FilterForRange = () => {
+  enum Title {
+    count = 'Количество экземпляров:',
+    year = 'Год приобретения:'
+  }
+
   const year = useSelector<storeType, number[]>(state => state.filter.year);
 
   const count = useSelector<storeType, number[]>(state => state.filter.count);
@@ -29,8 +34,8 @@ export const FilterForRange = () => {
   return (
     <div className={s.container}>
       <h3>Фильтр по диапазону</h3>
-      {createBlock('Количество экземпляров:', count, changeAmount, 12, 1)}
-      {createBlock('Год приобретения:', year, changeYear, 2020, 1940)}
+      {createBlock(Title.count, count, changeAmount, Count.end, Count.start)}
+      {createBlock(Title.year, year, changeYear, Year.end, Year.start)}
     </div>
   );
 };

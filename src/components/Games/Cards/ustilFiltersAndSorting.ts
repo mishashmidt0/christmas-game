@@ -1,9 +1,13 @@
-import { cardsType, dataType, keyDataType } from '../../../store/cardsSlice';
-import { filterType, keyType } from '../../../store/filterValueSlice';
-import {
-  filterRangeAndSortType,
-  keyRangeType,
-} from '../../../store/filterRangeAndSortSlice';
+import { cardsType, keyDataType } from '../../../store/cardsSlice';
+import { filterType, keyType, Property } from '../../../store/filterValueSlice';
+import { filterRangeAndSortType, keyRangeType } from '../../../store/filterRangeAndSortSlice';
+
+export enum Sort {
+  nameAZ = '10',
+  nameZA = '21',
+  ascending = '22',
+  descending = '23',
+}
 
 // Делаем проверку каждой карточки, что бы удовлетворяла условиям
 export const allFilters = (
@@ -12,12 +16,12 @@ export const allFilters = (
   filter: filterRangeAndSortType,
 ): boolean => {
   if (
-    filterValues(card, 'shape', filterValue) &&
-    filterValues(card, 'color', filterValue) &&
-    filterValues(card, 'size', filterValue) &&
-    filterValues(card, 'favorite', filterValue) &&
-    filterRange(card, 'count', filter) &&
-    filterRange(card, 'year', filter)
+    filterValues(card, Property.shape, filterValue) &&
+    filterValues(card, Property.color, filterValue) &&
+    filterValues(card, Property.size, filterValue) &&
+    filterValues(card, Property.favorite, filterValue) &&
+    filterRange(card, Property.count, filter) &&
+    filterRange(card, Property.year, filter)
   )
     return true;
 
@@ -37,7 +41,7 @@ const filterValues = (
   filterValue: filterType,
 ): boolean => {
   const formArr = searchIsActiveItem(key, filterValue);
-  if (formArr.length && key === 'favorite')
+  if (formArr.length && key === Property.favorite)
     return !!formArr.find(item => item.isActive === card[key]);
   if (formArr.length) return !!formArr.find(item => item.name === card[key]);
   return true;
@@ -56,19 +60,19 @@ const filterRange = (
 // Сортируем полученный список
 export const sort = (filteredArr: cardsType[], sortKey: string) => {
   switch (sortKey.toString()) {
-    case '10':
+    case Sort.nameAZ:
       return filteredArr.sort((a, b) => {
         return a.name > b.name ? 1 : -1;
       });
-    case '21':
+    case Sort.nameZA:
       return filteredArr.sort((a, b) => {
         return a.name < b.name ? 1 : -1;
       });
-    case '22':
+    case Sort.ascending:
       return filteredArr.sort((a, b) => {
         return +a.count - +b.count;
       });
-    case '23':
+    case Sort.descending:
       return filteredArr.sort((a, b) => {
         return +b.count - +a.count;
       });

@@ -10,14 +10,15 @@ function valuetext(value: number) {
   return `${value}`;
 }
 
-type RangeSlider = {
+type RangeSliderType = {
   number: number[];
   AC: ActionCreatorWithPayload<{ newValue: number[] }>;
   max: number;
   min: number;
 };
 
-export const RangeSlider: FC<RangeSlider> = React.memo(({ number, AC, max, min }) => {
+export const RangeSlider: FC<RangeSliderType> = React.memo(({ number, AC, max, min }) => {
+
   const dispatch = useDispatch();
   const [start, end] = number;
 
@@ -39,7 +40,7 @@ export const RangeSlider: FC<RangeSlider> = React.memo(({ number, AC, max, min }
           getAriaLabel={() => 'get range'}
           value={number}
           onChange={handleChange}
-          valueLabelDisplay="auto"
+          valueLabelDisplay='auto'
           getAriaValueText={valuetext}
         />
       </Box>

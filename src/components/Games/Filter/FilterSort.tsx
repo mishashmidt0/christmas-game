@@ -9,6 +9,11 @@ import { resetIsActiveToys } from '../../../store/appSlice';
 import { resetActiveCards } from '../../../store/cardsSlice';
 
 export const FilterSort = () => {
+  enum Title {
+    header = 'Сортировка',
+    button = 'Сброс фильтров'
+  }
+
   const dispatch = useDispatch();
 
   const reset = useCallback(() => {
@@ -21,11 +26,11 @@ export const FilterSort = () => {
 
   return (
     <div className={s.container}>
-      <h3>Сортировка</h3>
+      <h3>{Title.header}</h3>
       <SelectComponent />
 
-      <Button variant="contained" color={'primary'} onClick={reset}>
-        Сброс фильтров
+      <Button variant='contained' color={'primary'} onClick={reset}>
+        {Title.button}
       </Button>
     </div>
   );

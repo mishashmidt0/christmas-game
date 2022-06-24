@@ -1,5 +1,4 @@
-import { createSlice, Dispatch } from '@reduxjs/toolkit';
-import { cardsApi } from '../api/cards-api';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState: appType = {
   headerHidden: false,

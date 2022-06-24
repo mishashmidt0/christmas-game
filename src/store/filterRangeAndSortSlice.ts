@@ -1,8 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+
+export enum Count {
+  start = 1,
+  end = 12,
+}
+
+export enum Year {
+  start = 1940,
+  end = 2020,
+}
+
 const initialState: filterRangeAndSortType = {
-  count: [1, 12],
-  year: [1940, 2020],
+  count: [Count.start, Count.end],
+  year: [Year.start, Year.end],
   sort: '',
   search: '',
 };

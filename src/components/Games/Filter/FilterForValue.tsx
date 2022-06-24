@@ -8,7 +8,7 @@ import {
   changeForm,
   changeSize,
   filterType,
-  keyType,
+  keyType, Property,
   valueType,
 } from '../../../store/filterValueSlice';
 
@@ -16,16 +16,24 @@ export const FilterForValue = () => {
   const filters = useSelector<storeType, filterType>(state => state.filterValue);
   const dispatch = useDispatch();
 
+  enum Title {
+    form = 'Форма:',
+    color = 'Цвет:',
+    size = 'Размер:',
+    favorite = 'Только любимые:',
+
+  }
+
   // Принимаем фильтр который установил пользователь
   const changeFiler = useCallback((key: keyType, name: string, isActive: boolean) => {
     switch (key) {
-      case 'shape':
+      case Property.shape:
         return dispatch(changeForm({ name, isActive }));
-      case 'color':
+      case Property.color:
         return dispatch(changeColor({ name, isActive }));
-      case 'size':
+      case Property.size:
         return dispatch(changeSize({ name, isActive }));
-      case 'favorite':
+      case Property.favorite:
         return dispatch(changeFavorite({ name, isActive }));
     }
   }, []);
@@ -52,10 +60,10 @@ export const FilterForValue = () => {
   return (
     <div className={s.container}>
       <h3>Фильтр по значению</h3>
-      {createBlock('shape', 'Форма:', filters.shape)}
-      {createBlock('color', 'Цвет:', filters.color)}
-      {createBlock('size', 'Размер:', filters.size)}
-      {createBlock('favorite', ' Только любимые:', filters.favorite)}
+      {createBlock(Property.shape, Title.form, filters.shape)}
+      {createBlock(Property.color, Title.color, filters.color)}
+      {createBlock(Property.size, Title.size, filters.size)}
+      {createBlock(Property.favorite, Title.favorite, filters.favorite)}
     </div>
   );
 };
