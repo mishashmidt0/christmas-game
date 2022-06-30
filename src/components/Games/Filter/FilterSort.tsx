@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import s from './style/styleSort.module.css';
+import style from './style/styleSort.module.css';
 import { Button } from '@mui/material';
 import { SelectComponent } from './select';
 import { useDispatch } from 'react-redux';
@@ -25,7 +25,7 @@ export const FilterSort = () => {
   }, [dispatch]);
 
   return (
-    <div className={s.container}>
+    <div className={style.container}>
       <h3>{Title.header}</h3>
       <SelectComponent />
 

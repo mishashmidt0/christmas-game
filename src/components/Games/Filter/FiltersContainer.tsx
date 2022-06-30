@@ -1,12 +1,12 @@
 import React from 'react';
 import { FilterForValue } from './FilterForValue';
 import { FilterForRange } from './FilterForRange';
-import s from './style/styleFilters.module.css';
+import style from './style/styleFilters.module.css';
 import { FilterSort } from './FilterSort';
 
 export const FiltersContainer = () => {
   return (
-    <div className={s.container}>
+    <div className={style.container}>
       <FilterForValue />
       <FilterForRange />
       <FilterSort />

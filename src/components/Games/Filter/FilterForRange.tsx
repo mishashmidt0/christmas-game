@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import s from './style/styleRange.module.css';
+import style from './style/styleRange.module.css';
 import { useSelector } from 'react-redux';
 import { storeType } from '../../../store/redux';
 import { RangeSlider } from './range';
@@ -24,7 +24,7 @@ export const FilterForRange = () => {
       max: number,
       min: number,
     ) => (
-      <div className={s.block}>
+      <div className={style.block}>
         <p>{title}</p>
         <RangeSlider number={number} AC={AC} max={max} min={min} />
       </div>
@@ -32,7 +32,7 @@ export const FilterForRange = () => {
     [],
   );
   return (
-    <div className={s.container}>
+    <div className={style.container}>
       <h3>Фильтр по диапазону</h3>
       {createBlock(Title.count, count, changeAmount, Count.end, Count.start)}
       {createBlock(Title.year, year, changeYear, Year.end, Year.start)}

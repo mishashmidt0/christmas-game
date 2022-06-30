@@ -1,23 +1,15 @@
-import React, { useCallback, useMemo } from 'react';
-import s from './style/styleValue.module.css';
+import React, { useCallback } from 'react';
+import style from './style/styleValue.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { storeType } from '../../../store/redux';
-import {
-  changeColor,
-  changeFavorite,
-  changeForm,
-  changeSize,
-  filterType,
-  keyType, Property,
-  valueType,
-} from '../../../store/filterValueSlice';
+import { changeColor, changeFavorite, changeForm, changeSize, filterType, keyType, Property, valueType } from '../../../store/filterValueSlice';
 
 export const FilterForValue = () => {
   const filters = useSelector<storeType, filterType>(state => state.filterValue);
   const dispatch = useDispatch();
 
-  enum Title {
-    form = 'Форма:',
+  enum TitleValue {
+    shape = 'Форма:',
     color = 'Цвет:',
     size = 'Размер:',
     favorite = 'Только любимые:',
@@ -25,7 +17,7 @@ export const FilterForValue = () => {
   }
 
   // Принимаем фильтр который установил пользователь
-  const changeFiler = useCallback((key: keyType, name: string, isActive: boolean) => {
+  const changeFilter = useCallback((key: keyType, name: string, isActive: boolean) => {
     switch (key) {
       case Property.shape:
         return dispatch(changeForm({ name, isActive }));
@@ -41,14 +33,14 @@ export const FilterForValue = () => {
   const createBlock = useCallback(
     (key: keyType, title: string, arr: valueType[]) => {
       return (
-        <div className={s[key]}>
+        <div className={style[key]}>
           <>{title}</>
           {arr.map((el, i) => (
             <button
               key={i}
-              className={el.isActive ? s.active : s.diActive}
+              className={el.isActive ? style.activeButton : style.inActiveButton}
               data-filter={el.name}
-              onClick={() => changeFiler(key, el.name, !el.isActive)}
+              onClick={() => changeFilter(key, el.name, !el.isActive)}
             />
           ))}
         </div>
@@ -58,12 +50,12 @@ export const FilterForValue = () => {
   );
 
   return (
-    <div className={s.container}>
+    <div className={style.container}>
       <h3>Фильтр по значению</h3>
-      {createBlock(Property.shape, Title.form, filters.shape)}
-      {createBlock(Property.color, Title.color, filters.color)}
-      {createBlock(Property.size, Title.size, filters.size)}
-      {createBlock(Property.favorite, Title.favorite, filters.favorite)}
+      {createBlock(Property.shape, TitleValue.shape, filters.shape)}
+      {createBlock(Property.color, TitleValue.color, filters.color)}
+      {createBlock(Property.size, TitleValue.size, filters.size)}
+      {createBlock(Property.favorite, TitleValue.favorite, filters.favorite)}
     </div>
   );
 };

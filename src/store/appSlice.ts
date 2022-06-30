@@ -5,7 +5,7 @@ const initialState: appType = {
   activeToys: 0,
 };
 
-//slice
+
 const appSlice = createSlice({
   name: 'appSlice',
   initialState: initialState,

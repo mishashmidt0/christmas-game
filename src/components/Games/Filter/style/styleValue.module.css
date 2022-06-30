@@ -4,9 +4,9 @@
   padding: 10px;
   border-radius: 8px;
   background-color: rgba(118, 217, 199, 0.26);
-  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -webkit-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
 }
 
 .favorite button,
@@ -68,7 +68,7 @@
   background-image: url('../../../../data/assets/svg/toy.svg');
 }
 
-.shape button.active {
+.shape button.activeButton {
   filter: invert(9%) sepia(63%) saturate(461%) hue-rotate(322deg) brightness(83%)
     contrast(88%);
 }
@@ -94,7 +94,7 @@
   background-color: green;
 }
 
-.color button.active::after {
+.color button.activeButton::after {
   content: '';
   display: block;
   position: absolute;
@@ -107,11 +107,11 @@
   transform: rotate(45deg);
 }
 
-.color button.active:nth-child(1)::after {
+.color button.activeButton:nth-child(1)::after {
   border-color: #666;
 }
 
-.color button.active:nth-child(2)::after {
+.color button.activeButton:nth-child(2)::after {
   border-color: #666;
 }
 
@@ -123,12 +123,12 @@
   background-size: 32px 32px;
 }
 
-.size button.active {
+.size button.activeButton {
   filter: invert(6%) sepia(63%) saturate(461%) hue-rotate(322deg) brightness(83%)
     contrast(88%);
 }
 
-.favorite button.active::after {
+.favorite button.activeButton::after {
   content: '';
   display: block;
   position: absolute;

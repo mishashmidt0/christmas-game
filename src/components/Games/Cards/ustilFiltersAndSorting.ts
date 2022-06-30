@@ -15,22 +15,19 @@ export const allFilters = (
   filterValue: filterType,
   filter: filterRangeAndSortType,
 ): boolean => {
-  if (
+  return (
     filterValues(card, Property.shape, filterValue) &&
     filterValues(card, Property.color, filterValue) &&
     filterValues(card, Property.size, filterValue) &&
     filterValues(card, Property.favorite, filterValue) &&
     filterRange(card, Property.count, filter) &&
     filterRange(card, Property.year, filter)
-  )
-    return true;
-
-  return false;
+  );
 };
 
 // Делаем проверку на активыные фильтры (получаем массив активных button)
 const searchIsActiveItem = (key: keyType, filterValue: filterType) => {
-  return filterValue[key].filter(f => f.isActive === true);
+  return filterValue[key].filter(f => f.isActive);
 };
 
 // Если всё НЕ активно карточка проходит, если Есть активная кнопка, проверям с помощью метода find (на его пустоту)
@@ -41,10 +38,14 @@ const filterValues = (
   filterValue: filterType,
 ): boolean => {
   const formArr = searchIsActiveItem(key, filterValue);
-  if (formArr.length && key === Property.favorite)
+
+  // отдельная проверка на любимые карточки
+  if (formArr.length && key === Property.favorite) {
     return !!formArr.find(item => item.isActive === card[key]);
-  if (formArr.length) return !!formArr.find(item => item.name === card[key]);
-  return true;
+  }
+// при пустом фильтре возврощаем все, иначе смотрим есть ли этот параметр у карточки
+  return formArr.length ? !!formArr.find(item => item.name === card[key]) : true;
+
 };
 
 // Проверяем диапазон
@@ -58,7 +59,7 @@ const filterRange = (
 };
 
 // Сортируем полученный список
-export const sort = (filteredArr: cardsType[], sortKey: string) => {
+export const sorting = (filteredArr: cardsType[], sortKey: string) => {
   switch (sortKey.toString()) {
     case Sort.nameAZ:
       return filteredArr.sort((a, b) => {
@@ -82,9 +83,9 @@ export const sort = (filteredArr: cardsType[], sortKey: string) => {
 };
 
 // Поиск по тексту
-export const search = (filteredArr: cardsType[], textSearch: string) => {
-  if (!textSearch) return filteredArr;
+export const searching = (filteredArr: cardsType[], textSearch: string) => {
+
   const regexp = new RegExp(`${textSearch}`, 'i');
 
-  return filteredArr.filter(item => regexp.test(item.name));
+  return (!textSearch) ? filteredArr : filteredArr.filter(item => regexp.test(item.name));
 };

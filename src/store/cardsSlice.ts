@@ -9,20 +9,21 @@ const cardsSlice = createSlice({
   initialState: initialState,
   reducers: {
     setCards(state, { payload }) {
-      return payload.state.map((c: dataType) => ({ ...c, isChoose: false }));
+      return payload.state.map((c: dataType) => ({ ...c, isChosen: false }));
     },
-    chooseCard(state, { payload: { id, value } }) {
-      return state.map((c: cardsType) => (c.num === id ? { ...c, isChoose: value } : c));
+    chosenCard(state, { payload: { id, value } }) {
+
+      return state.map((c: cardsType) => (c.num === id ? { ...c, isChosen: value } : c));
     },
     resetActiveCards(state) {
-      return state.map((c: cardsType) => ({ ...c, isChoose: false }));
+      return state.map((c: cardsType) => ({ ...c, isChosen: false }));
     },
   },
 });
 export default cardsSlice.reducer;
 
 // action
-export const { setCards, chooseCard, resetActiveCards } = cardsSlice.actions;
+export const { setCards, chosenCard, resetActiveCards } = cardsSlice.actions;
 
 // thunk
 export const setCardsTC = () => (dispatch: Dispatch<any>) => {
@@ -42,7 +43,7 @@ export type dataType = {
   size: string;
   favorite: boolean;
 };
-export type isChooseType = { isChoose: boolean };
-export type cardsType = dataType & isChooseType;
+export type isChosenType = { isChosen: boolean };
+export type cardsType = dataType & isChosenType;
 
 export type keyDataType = keyof dataType;

@@ -1,10 +1,10 @@
 import React from 'react';
 import preloader from '../../../data/preloader.svg';
-import s from './styleCards.module.css';
+import style from './styleCards.module.css';
 
 export const Preloader = () => {
   return (
-    <div className={s.preloader}>
+    <div className={style.preloader}>
       <img src={preloader} alt="preloader" />
     </div>
   );

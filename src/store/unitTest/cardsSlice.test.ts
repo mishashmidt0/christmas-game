@@ -1,6 +1,6 @@
 import cardsSlice, {
   cardsType,
-  chooseCard,
+  chosenCard,
   dataType,
   resetActiveCards,
   setCards,
@@ -45,13 +45,13 @@ test('should be change choose a card', () => {
       color: 'желтый',
       size: 'большой',
       favorite: false,
-      isChoose: false,
+      isChosen: false,
     },
   ];
 
-  const endState = cardsSlice(initialState, chooseCard({ id: '1', value: true }));
+  const endState = cardsSlice(initialState, chosenCard({ id: '1', value: true }));
 
-  expect(endState[0].isChoose).toBe(true);
+  expect(endState[0].isChosen).toBe(true);
 });
 test('should be reset active cards', () => {
   initialState = [
@@ -64,11 +64,11 @@ test('should be reset active cards', () => {
       color: 'желтый',
       size: 'большой',
       favorite: false,
-      isChoose: true,
+      isChosen: true,
     },
   ];
 
   const endState = cardsSlice(initialState, resetActiveCards());
 
-  expect(endState[0].isChoose).toBe(false);
+  expect(endState[0].isChosen).toBe(false);
 });
