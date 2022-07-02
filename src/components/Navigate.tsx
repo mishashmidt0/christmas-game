@@ -4,10 +4,15 @@ import { Main } from '../page/Main';
 import { Games } from '../page/Games';
 import { ChristmasTree } from '../page/ChristmasTree';
 
+enum PATH {
+  Main = '/',
+  Game = '/games',
+  ChristmasTree = '/ChristmasTree',
+}
 const routes = [
-  { path: '/', component: <Main /> },
-  { path: '/games', component: <Games /> },
-  { path: '/ChristmasTree', component: <ChristmasTree /> },
+  { path: PATH.Main, component: <Main /> },
+  { path: PATH.Game, component: <Games /> },
+  { path: PATH.ChristmasTree, component: <ChristmasTree /> },
 ];
 
 export const Navigate = () => {
