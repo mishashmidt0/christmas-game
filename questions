@@ -1,0 +1,16 @@
+1) деструтуризация props в Компоненте Card
+2) деструтуризация в Компоненте Cards 18 строка filter
+3) не забывай фигурные скобки вокруг if  path == src/components/Games/Cards/ustilFiltersAndSorting.ts  . .18 строка
+4) if (condition) {
+   return true
+   }
+   return false
+
+   можно заменить на:
+
+   return condition
+
+   не нашел
+
+5)почему нужны скобки, если можно сделать выражение в одну строку ?
+6) Как правильно называть файл для констант  и для enum?
