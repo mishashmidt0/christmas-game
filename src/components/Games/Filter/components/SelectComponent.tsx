@@ -5,19 +5,19 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { useDispatch, useSelector } from 'react-redux';
-import { storeType } from '../../../store/redux';
-import { changeSort } from '../../../store/filterRangeAndSortSlice';
-import { Sort } from '../Cards/ustilFiltersAndSorting';
+import { storeType } from '../../../../store/redux';
+import { changeSort } from '../../../../store/filterRangeAndSortSlice';
+import { Sort } from '../../Cards/ustilFiltersAndSorting';
 
 export const SelectComponent = React.memo(() => {
   const value = useSelector<storeType, string>(state => state.filter.sort);
   const dispatch = useDispatch();
 
   const handleChange = useCallback(
-    (event: SelectChangeEvent) => {
-      dispatch(changeSort({ value: event.target.value }));
+    ({ target }: SelectChangeEvent) => {
+      dispatch(changeSort({ value: target.value }));
     },
-    [dispatch],
+    [],
   );
 
   return (

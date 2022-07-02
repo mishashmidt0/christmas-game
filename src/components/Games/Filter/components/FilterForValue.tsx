@@ -1,20 +1,15 @@
 import React, { useCallback } from 'react';
-import style from './style/styleValue.module.css';
+import style from '../style/styleValue.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { storeType } from '../../../store/redux';
-import { changeColor, changeFavorite, changeForm, changeSize, filterType, keyType, Property, valueType } from '../../../store/filterValueSlice';
+import { storeType } from '../../../../store/redux';
+import { changeColor, changeFavorite, changeForm, changeSize, filterType, keyType, Property, valueType } from '../../../../store/filterValueSlice';
+import { FilterValueTitle } from './enumForFilter';
+
 
 export const FilterForValue = () => {
   const filters = useSelector<storeType, filterType>(state => state.filterValue);
   const dispatch = useDispatch();
 
-  enum TitleValue {
-    shape = 'Форма:',
-    color = 'Цвет:',
-    size = 'Размер:',
-    favorite = 'Только любимые:',
-
-  }
 
   // Принимаем фильтр который установил пользователь
   const changeFilter = useCallback((key: keyType, name: string, isActive: boolean) => {
@@ -49,13 +44,15 @@ export const FilterForValue = () => {
     [filters],
   );
 
+
   return (
     <div className={style.container}>
       <h3>Фильтр по значению</h3>
-      {createBlock(Property.shape, TitleValue.shape, filters.shape)}
-      {createBlock(Property.color, TitleValue.color, filters.color)}
-      {createBlock(Property.size, TitleValue.size, filters.size)}
-      {createBlock(Property.favorite, TitleValue.favorite, filters.favorite)}
+
+      {createBlock(Property.shape, FilterValueTitle.shape, filters.shape)}
+      {createBlock(Property.color, FilterValueTitle.color, filters.color)}
+      {createBlock(Property.size, FilterValueTitle.size, filters.size)}
+      {createBlock(Property.favorite, FilterValueTitle.favorite, filters.favorite)}
     </div>
   );
 };

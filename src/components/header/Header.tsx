@@ -10,7 +10,7 @@ import { Dispatch } from '@reduxjs/toolkit';
 import { changeSearch } from '../../store/filterRangeAndSortSlice';
 import style from './style.module.css';
 import { Search, SearchIconWrapper, StyledInputBase } from './utilHeaderFunc';
-import { ButtonHeader } from './ButtonHeader';
+import { ButtonHeader } from './components/ButtonHeader';
 
 export const Header = React.memo(() => {
   const activeToys = useSelector<storeType, number>(state => state.app.activeToys);

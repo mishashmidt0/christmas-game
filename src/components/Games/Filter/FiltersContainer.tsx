@@ -1,8 +1,8 @@
 import React from 'react';
-import { FilterForValue } from './FilterForValue';
-import { FilterForRange } from './FilterForRange';
+import { FilterForValue } from './components/FilterForValue';
+import { FilterForRange } from './components/FilterForRange';
 import style from './style/styleFilters.module.css';
-import { FilterSort } from './FilterSort';
+import { FilterSort } from './components/FilterSort';
 
 export const FiltersContainer = () => {
   return (

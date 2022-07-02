@@ -1,20 +1,14 @@
 import React from 'react';
 import { Header } from '../components/header/Header';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Main } from './Main';
-import { ChristmasTree } from './ChristmasTree';
-import { Games } from './Games';
+import { BrowserRouter } from 'react-router-dom';
+import { Navigate } from '../components/Navigate';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className='App'>
         <Header />
-        <Routes>
-          <Route path={'/'} element={<Main />} />
-          <Route path={'/games'} element={<Games />} />
-          <Route path={'/ChristmasTree'} element={<ChristmasTree />} />
-        </Routes>
+        <Navigate />
       </div>
     </BrowserRouter>
   );
