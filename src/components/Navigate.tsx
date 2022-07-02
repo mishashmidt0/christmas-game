@@ -1,25 +1,26 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import { Main } from '../page/Main';
-import { Games } from '../page/Games';
-import { ChristmasTree } from '../page/ChristmasTree';
 
-enum PATH {
-  Main = '/',
-  Game = '/games',
-  ChristmasTree = '/ChristmasTree',
-}
+import { Route, Routes } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
+
+import { PATH } from '../enums/path';
+import { ChristmasTree } from '../page/ChristmasTree';
+import { Games } from '../page/Games';
+import { Main } from '../page/Main';
+import { ReturnComponentType } from '../types';
+
 const routes = [
-  { path: PATH.Main, component: <Main /> },
-  { path: PATH.Game, component: <Games /> },
-  { path: PATH.ChristmasTree, component: <ChristmasTree /> },
+  { id: uuidv4(), path: PATH.Main, component: <Main /> },
+  { id: uuidv4(), path: PATH.Game, component: <Games /> },
+  { id: uuidv4(), path: PATH.ChristmasTree, component: <ChristmasTree /> },
 ];
 
-export const Navigate = () => {
+export const Navigate = (): ReturnComponentType => {
   return (
     <Routes>
-      {routes.map(route => <Route path={route.path} element={route.component} />)}
+      {routes.map(route => (
+        <Route key={route.id} path={route.path} element={route.component} />
+      ))}
     </Routes>
   );
 };
-

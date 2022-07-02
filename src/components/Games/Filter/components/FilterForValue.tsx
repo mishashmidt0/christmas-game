@@ -1,15 +1,26 @@
 import React, { useCallback } from 'react';
-import style from '../style/styleValue.module.css';
+
 import { useDispatch, useSelector } from 'react-redux';
+import { v4 as uuid4 } from 'uuid';
+
+import { FilterValueTitle } from '../../../../enums/enumForFilter';
+import {
+  changeColor,
+  changeFavorite,
+  changeForm,
+  changeSize,
+  filterType,
+  keyType,
+  Property,
+  valueType,
+} from '../../../../store/filterValueSlice';
 import { storeType } from '../../../../store/redux';
-import { changeColor, changeFavorite, changeForm, changeSize, filterType, keyType, Property, valueType } from '../../../../store/filterValueSlice';
-import { FilterValueTitle } from './enumForFilter';
+import { ReturnComponentType } from '../../../../types';
+import style from '../style/styleValue.module.css';
 
-
-export const FilterForValue = () => {
+export const FilterForValue = (): ReturnComponentType => {
   const filters = useSelector<storeType, filterType>(state => state.filterValue);
   const dispatch = useDispatch();
-
 
   // Принимаем фильтр который установил пользователь
   const changeFilter = useCallback((key: keyType, name: string, isActive: boolean) => {
@@ -22,6 +33,8 @@ export const FilterForValue = () => {
         return dispatch(changeSize({ name, isActive }));
       case Property.favorite:
         return dispatch(changeFavorite({ name, isActive }));
+      default:
+        break;
     }
   }, []);
 
@@ -29,13 +42,15 @@ export const FilterForValue = () => {
     (key: keyType, title: string, arr: valueType[]) => {
       return (
         <div className={style[key]}>
-          <>{title}</>
-          {arr.map((el, i) => (
+          {title}
+          {arr.map(element => (
             <button
-              key={i}
-              className={el.isActive ? style.activeButton : style.inActiveButton}
-              data-filter={el.name}
-              onClick={() => changeFilter(key, el.name, !el.isActive)}
+              aria-label="Mute volume"
+              type="button"
+              key={uuid4()}
+              className={element.isActive ? style.activeButton : style.inActiveButton}
+              data-filter={element.name}
+              onClick={() => changeFilter(key, element.name, !element.isActive)}
             />
           ))}
         </div>
@@ -43,7 +58,6 @@ export const FilterForValue = () => {
     },
     [filters],
   );
-
 
   return (
     <div className={style.container}>

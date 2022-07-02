@@ -1,47 +1,55 @@
-import React, { FC, useCallback } from 'react';
-import style from './styleCards.module.css';
-import { cardsType, chosenCard } from '../../../store/cardsSlice';
-import { setImage } from './setImage';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useCallback } from 'react';
+
 import { Dispatch } from '@reduxjs/toolkit';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { changeActiveToys } from '../../../store/appSlice';
+import { cardsType, chosenCard } from '../../../store/cardsSlice';
 import { storeType } from '../../../store/redux';
+import { ReturnComponentType } from '../../../types';
 
-export const Card: FC<cardsType> = React.memo(
-  (props) => {
-    const { num, name, year, color, size, favorite, shape, count, isChosen } = props;
+import { setImage } from './setImage';
+import style from './styleCards.module.css';
 
-    const dispatch = useDispatch<Dispatch>();
-    let activeToys = useSelector<storeType, number>(state => state.app.activeToys);
+export const Card = React.memo((props: cardsType): ReturnComponentType => {
+  const { num, name, year, color, size, favorite, shape, count, isChosen } = props;
 
-    const dispatchIsChosenCard = useCallback(() => {
-      dispatch(chosenCard({ id: num, value: !isChosen }));
+  const dispatch = useDispatch<Dispatch>();
+  const activeToys = useSelector<storeType, number>(state => state.app.activeToys);
 
-      !isChosen ? dispatch(changeActiveToys({ value: ++activeToys }))
-        : dispatch(changeActiveToys({ value: --activeToys }));
+  const dispatchIsChosenCard = useCallback(() => {
+    dispatch(chosenCard({ id: num, value: !isChosen }));
 
-    }, [isChosen, activeToys]);
+    return !isChosen
+      ? dispatch(changeActiveToys({ value: activeToys + 1 }))
+      : dispatch(changeActiveToys({ value: activeToys - 1 }));
+  }, [isChosen, activeToys]);
 
-    const img = setImage(num);
+  const img = setImage(num);
 
-    return (
-      <div className={`${style.containerCard} ${isChosen ? style.active : ''}`}>
-        <h3 className={style.cardHeader}>{name}</h3>
-        <div className={style.cardDescriptionContainer}>
+  return (
+    <div className={`${style.containerCard} ${isChosen ? style.active : ''}`}>
+      <h3 className={style.cardHeader}>{name}</h3>
+      <div className={style.cardDescriptionContainer}>
+        <img src={img} alt="card" />
+        <div
+          role="button"
+          className={style.ribbon}
+          onClick={dispatchIsChosenCard}
+          onKeyDown={dispatchIsChosenCard}
+          tabIndex={0}
+          aria-label="fdf"
+        />
 
-          <img src={img} alt='card' />
-          <div className={style.ribbon} onClick={dispatchIsChosenCard}></div>
-
-          <ul className={style.cardDescription}>
-            <li>Количество: {count}</li>
-            <li>Год покупки: {year}</li>
-            <li>Форма: {shape}</li>
-            <li>Цвет: {color}</li>
-            <li>Размер: {size}</li>
-            <li>Любимая: {favorite ? 'да' : 'нет'}</li>
-          </ul>
-        </div>
+        <ul className={style.cardDescription}>
+          <li>Количество: {count}</li>
+          <li>Год покупки: {year}</li>
+          <li>Форма: {shape}</li>
+          <li>Цвет: {color}</li>
+          <li>Размер: {size}</li>
+          <li>Любимая: {favorite ? 'да' : 'нет'}</li>
+        </ul>
       </div>
-    );
-  },
-);
+    </div>
+  );
+});

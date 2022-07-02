@@ -1,13 +1,24 @@
 import React, { useCallback } from 'react';
-import style from '../style/styleRange.module.css';
-import { useSelector } from 'react-redux';
-import { storeType } from '../../../../store/redux';
-import { RangeSlider } from './RangeSlider';
-import { changeAmount, changeYear, endCount, endYear, startCount, startYear } from '../../../../store/filterRangeAndSortSlice';
-import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
-import { FilterRangeTitle } from './enumForFilter';
 
-export const FilterForRange = () => {
+import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
+import { useSelector } from 'react-redux';
+
+import { FilterRangeTitle } from '../../../../enums/enumForFilter';
+import {
+  changeAmount,
+  changeYear,
+  endCount,
+  endYear,
+  startCount,
+  startYear,
+} from '../../../../store/filterRangeAndSortSlice';
+import { storeType } from '../../../../store/redux';
+import { ReturnComponentType } from '../../../../types';
+import style from '../style/styleRange.module.css';
+
+import { RangeSlider } from './RangeSlider';
+
+export const FilterForRange = (): ReturnComponentType => {
   const year = useSelector<storeType, number[]>(state => state.filter.year);
   const count = useSelector<storeType, number[]>(state => state.filter.count);
 
@@ -26,6 +37,7 @@ export const FilterForRange = () => {
     ),
     [],
   );
+
   return (
     <div className={style.container}>
       <h3>Фильтр по диапазону</h3>

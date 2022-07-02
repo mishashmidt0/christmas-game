@@ -1,18 +1,18 @@
 import { createSlice, Dispatch } from '@reduxjs/toolkit';
+
 import { cardsApi } from '../api/cards-api';
 
 const initialState: cardsType[] = [];
 
-//slice
+// slice
 const cardsSlice = createSlice({
   name: 'cardsSlice',
-  initialState: initialState,
+  initialState,
   reducers: {
     setCards(state, { payload }) {
       return payload.state.map((c: dataType) => ({ ...c, isChosen: false }));
     },
     chosenCard(state, { payload: { id, value } }) {
-
       return state.map((c: cardsType) => (c.num === id ? { ...c, isChosen: value } : c));
     },
     resetActiveCards(state) {
@@ -20,6 +20,7 @@ const cardsSlice = createSlice({
     },
   },
 });
+
 export default cardsSlice.reducer;
 
 // action

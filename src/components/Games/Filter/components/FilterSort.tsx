@@ -1,15 +1,19 @@
 import React, { useCallback } from 'react';
-import style from '../style/styleSort.module.css';
+
 import { Button } from '@mui/material';
-import { SelectComponent } from './SelectComponent';
 import { useDispatch } from 'react-redux';
-import { changeSort, resetRange } from '../../../../store/filterRangeAndSortSlice';
-import { resetValue } from '../../../../store/filterValueSlice';
+
+import { SortTitle } from '../../../../enums/enumForFilter';
 import { resetIsActiveToys } from '../../../../store/appSlice';
 import { resetActiveCards } from '../../../../store/cardsSlice';
-import { SortTitle } from './enumForFilter';
+import { changeSort, resetRange } from '../../../../store/filterRangeAndSortSlice';
+import { resetValue } from '../../../../store/filterValueSlice';
+import { ReturnComponentType } from '../../../../types';
+import style from '../style/styleSort.module.css';
 
-export const FilterSort = () => {
+import { SelectComponent } from './SelectComponent';
+
+export const FilterSort = (): ReturnComponentType => {
   const dispatch = useDispatch();
 
   const reset = useCallback(() => {
@@ -25,7 +29,7 @@ export const FilterSort = () => {
       <h3>{SortTitle.header}</h3>
       <SelectComponent />
 
-      <Button variant='contained' color={'primary'} onClick={reset}>
+      <Button variant="contained" color="primary" onClick={reset}>
         {SortTitle.button}
       </Button>
     </div>

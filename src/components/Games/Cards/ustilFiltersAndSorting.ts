@@ -1,6 +1,14 @@
 import { cardsType, keyDataType } from '../../../store/cardsSlice';
-import { filterType, keyType, Property } from '../../../store/filterValueSlice';
-import { filterRangeAndSortType, keyRangeType } from '../../../store/filterRangeAndSortSlice';
+import {
+  filterRangeAndSortType,
+  keyRangeType,
+} from '../../../store/filterRangeAndSortSlice';
+import {
+  filterType,
+  keyType,
+  Property,
+  valueType,
+} from '../../../store/filterValueSlice';
 
 export enum Sort {
   nameAZ = '10',
@@ -26,7 +34,7 @@ export const allFilters = (
 };
 
 // Делаем проверку на активыные фильтры (получаем массив активных button)
-const searchIsActiveItem = (key: keyType, filterValue: filterType) => {
+const searchIsActiveItem = (key: keyType, filterValue: filterType): valueType[] => {
   return filterValue[key].filter(f => f.isActive);
 };
 
@@ -43,9 +51,9 @@ const filterValues = (
   if (formArr.length && key === Property.favorite) {
     return !!formArr.find(item => item.isActive === card[key]);
   }
-// при пустом фильтре возврощаем все, иначе смотрим есть ли этот параметр у карточки
-  return formArr.length ? !!formArr.find(item => item.name === card[key]) : true;
 
+  // при пустом фильтре возврощаем все, иначе смотрим есть ли этот параметр у карточки
+  return formArr.length ? !!formArr.find(item => item.name === card[key]) : true;
 };
 
 // Проверяем диапазон
@@ -53,13 +61,14 @@ const filterRange = (
   card: cardsType,
   key: keyRangeType,
   filter: filterRangeAndSortType,
-) => {
+): boolean => {
   const [start, end] = filter[key] as number[];
+
   return +card[key as keyDataType] >= start && +card[key as keyDataType] <= end;
 };
 
 // Сортируем полученный список
-export const sorting = (filteredArr: cardsType[], sortKey: string) => {
+export const sorting = (filteredArr: cardsType[], sortKey: string): cardsType[] => {
   switch (sortKey.toString()) {
     case Sort.nameAZ:
       return filteredArr.sort((a, b) => {
@@ -83,9 +92,8 @@ export const sorting = (filteredArr: cardsType[], sortKey: string) => {
 };
 
 // Поиск по тексту
-export const searching = (filteredArr: cardsType[], textSearch: string) => {
-
+export const searching = (filteredArr: cardsType[], textSearch: string): cardsType[] => {
   const regexp = new RegExp(`${textSearch}`, 'i');
 
-  return (!textSearch) ? filteredArr : filteredArr.filter(item => regexp.test(item.name));
+  return !textSearch ? filteredArr : filteredArr.filter(item => regexp.test(item.name));
 };

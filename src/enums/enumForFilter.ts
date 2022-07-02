@@ -1,6 +1,6 @@
 export enum FilterRangeTitle {
   count = 'Количество экземпляров:',
-  year = 'Год приобретения:'
+  year = 'Год приобретения:',
 }
 
 export enum FilterValueTitle {
@@ -12,5 +12,5 @@ export enum FilterValueTitle {
 
 export enum SortTitle {
   header = 'Сортировка',
-  button = 'Сброс фильтров'
+  button = 'Сброс фильтров',
 }

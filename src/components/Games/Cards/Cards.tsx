@@ -1,16 +1,20 @@
 import React, { useEffect, useMemo } from 'react';
-import style from './styleCards.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { cardsType, setCardsTC } from '../../../store/cardsSlice';
-import { Dispatch } from '@reduxjs/toolkit';
-import { storeType } from '../../../store/redux';
-import { Preloader } from './Preloader';
-import { Card } from './Card';
-import { allFilters, searching, sorting } from './ustilFiltersAndSorting';
-import { filterType } from '../../../store/filterValueSlice';
-import { filterRangeAndSortType } from '../../../store/filterRangeAndSortSlice';
 
-export const Cards = () => {
+import { Dispatch } from '@reduxjs/toolkit';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { cardsType, setCardsTC } from '../../../store/cardsSlice';
+import { filterRangeAndSortType } from '../../../store/filterRangeAndSortSlice';
+import { filterType } from '../../../store/filterValueSlice';
+import { storeType } from '../../../store/redux';
+import { ReturnComponentType } from '../../../types';
+
+import { Card } from './Card';
+import { Preloader } from './Preloader';
+import style from './styleCards.module.css';
+import { allFilters, searching, sorting } from './ustilFiltersAndSorting';
+
+export const Cards = (): ReturnComponentType => {
   const dispatch = useDispatch<Dispatch<any>>();
   const cards = useSelector<storeType, cardsType[]>(state => state.cards);
   const filterValue = useSelector<storeType, filterType>(state => state.filterValue);
@@ -33,10 +37,7 @@ export const Cards = () => {
   );
 
   // Далее Получаем массив карт которые проходят по сортировке
-  const sortedArr = useMemo(
-    () => sorting(filteredArr, sort),
-    [filteredArr, sort],
-  );
+  const sortedArr = useMemo(() => sorting(filteredArr, sort), [filteredArr, sort]);
 
   // И получаем массив карт которые проходят по поиску
   const searchedArr = useMemo(
@@ -50,6 +51,9 @@ export const Cards = () => {
     [searchedArr, sort],
   );
 
-  return !cards.length ? <Preloader />
-    : <div className={style.containerCards}>{tsxCards}</div>;
+  return !cards.length ? (
+    <Preloader />
+  ) : (
+    <div className={style.containerCards}>{tsxCards}</div>
+  );
 };
