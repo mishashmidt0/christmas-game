@@ -21,7 +21,6 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react",
         "import",
         "prettier",
         "react-hooks",
