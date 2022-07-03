@@ -4,9 +4,9 @@ import { Dispatch } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { changeActiveToys } from '../../../store/appSlice';
-import { cardsType, chosenCard } from '../../../store/cardsSlice';
 import { storeType } from '../../../store/redux';
 import { ReturnComponentType } from '../../../types';
+import { cardsType, chosenCard } from '../slice/cardsSlice';
 
 import { setImage } from './setImage';
 import style from './styleCards.module.css';

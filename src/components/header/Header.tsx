@@ -8,9 +8,9 @@ import Toolbar from '@mui/material/Toolbar';
 import { Dispatch } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { changeSearch } from '../../store/filterRangeAndSortSlice';
 import { storeType } from '../../store/redux';
 import { ReturnComponentType } from '../../types';
+import { changeSearch } from '../Games/slice/filterRangeAndSortSlice';
 
 import { ButtonHeader } from './components/ButtonHeader';
 import style from './style.module.css';

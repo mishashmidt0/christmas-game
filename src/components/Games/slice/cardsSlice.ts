@@ -1,6 +1,6 @@
 import { createSlice, Dispatch } from '@reduxjs/toolkit';
 
-import { cardsApi } from '../api/cards-api';
+import { cardsApi } from '../../../api/cards-api';
 
 const initialState: cardsType[] = [];
 

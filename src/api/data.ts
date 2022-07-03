@@ -1,4 +1,4 @@
-import { dataType } from '../store/cardsSlice';
+import { dataType } from '../components/Games/slice/cardsSlice';
 
 export const data: dataType[] = [
   {

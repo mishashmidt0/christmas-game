@@ -3,7 +3,7 @@ import appSlice, {
   changeActiveToys,
   changeHeaderHidden,
   resetIsActiveToys,
-} from '../appSlice';
+} from '../../../../store/appSlice';
 
 let initialState: appType;
 
