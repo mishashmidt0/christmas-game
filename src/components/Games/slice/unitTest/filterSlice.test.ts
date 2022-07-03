@@ -55,18 +55,20 @@ test('should be change isActive from color', () => {
     initialState,
     changeColor({ name: Color.red, isActive: true }),
   );
+  const index = 2;
 
-  expect(endState.color[2].name).toBe('красный');
-  expect(endState.color[2].isActive).toBe(true);
+  expect(endState.color[index].name).toBe('красный');
+  expect(endState.color[index].isActive).toBe(true);
 });
 test('should be change isActive from size', () => {
   const endState = filterValueSlice.reducer(
     initialState,
     changeSize({ name: Size.small, isActive: true }),
   );
+  const index = 2;
 
-  expect(endState.size[2].name).toBe('малый');
-  expect(endState.size[2].isActive).toBe(true);
+  expect(endState.size[index].name).toBe('малый');
+  expect(endState.size[index].isActive).toBe(true);
 });
 test('should be change isActive from favorite', () => {
   const endState = filterValueSlice.reducer(

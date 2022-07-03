@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { FC, useCallback } from 'react';
+
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
-import { useDispatch } from 'react-redux';
 import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
+import { useDispatch } from 'react-redux';
+
 import style from '../style/styleRange.module.css';
 
 function valuetext(value: number) {
@@ -17,7 +19,7 @@ type RangeSliderType = {
   min: number;
 };
 
-export const RangeSlider: FC<RangeSliderType> = React.memo((props) => {
+export const RangeSlider: FC<RangeSliderType> = React.memo(props => {
   const { currentValue, AC, max, min } = props;
   const dispatch = useDispatch();
   const [start, end] = currentValue;
@@ -25,6 +27,7 @@ export const RangeSlider: FC<RangeSliderType> = React.memo((props) => {
   const handleChange = useCallback(
     (event: Event, value: number | number[]) => {
       const newValue = value as number[];
+
       dispatch(AC({ newValue }));
     },
     [dispatch],
@@ -40,7 +43,7 @@ export const RangeSlider: FC<RangeSliderType> = React.memo((props) => {
           getAriaLabel={() => 'get range'}
           value={currentValue}
           onChange={handleChange}
-          valueLabelDisplay='auto'
+          valueLabelDisplay="auto"
           getAriaValueText={valuetext}
         />
       </Box>
