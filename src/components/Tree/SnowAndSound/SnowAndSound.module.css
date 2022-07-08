@@ -1,24 +1,19 @@
-
-.SnowAndSound{
-    width: 100px;
-    padding: 40px;
-    display: flex;
-    justify-content: space-between;
+.SnowAndSound {
+  width: 100px;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
 }
-.SnowAndSound button{
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
+.SnowAndSound button {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
 }
 .SnowAndSound img {
-    cursor: pointer;
-    width: 40px;
-
+  cursor: pointer;
+  width: 40px;
 }
 
 .SnowAndSound img.ActiveButton {
-    filter: invert(9%) sepia(63%) saturate(461%) hue-rotate(322deg) brightness(83%)
+  filter: invert(9%) sepia(63%) saturate(461%) hue-rotate(322deg) brightness(83%)
     contrast(88%);
 }
-
-
-
