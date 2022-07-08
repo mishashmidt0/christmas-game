@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 
 import music from '../../../data/assets/audio/audio.mp3';
 import audio from '../../../data/assets/svg/audio.svg';
@@ -8,9 +8,12 @@ import { useAppDispatch, useAppSelector } from '../../../store/redux';
 import { ReturnComponentType } from '../../../types';
 import { changeIsSnow, changeIsSound } from '../slice/ChristmasTreeSlice-slice';
 
+import './animationSnow.css';
+import { changeSnowAnimation, snowflakes } from './Snow';
 import style from './SnowAndSound.module.css';
 
 const ChristmasSound = new Audio(music);
+const two = 2;
 
 export const SnowAudioComponent = (): ReturnComponentType => {
   const dispatch = useAppDispatch();
@@ -22,6 +25,14 @@ export const SnowAudioComponent = (): ReturnComponentType => {
     // eslint-disable-next-line no-unused-expressions
     !isSound ? ChristmasSound.play() : ChristmasSound.pause();
   }, [isSound]);
+
+  useEffect(() => {
+    const snow = document.querySelector('#snow') as HTMLElement;
+
+    const params: [string, HTMLElement] = isSnow ? ['snowfall', snow] : ['false', snow];
+
+    changeSnowAnimation(...params);
+  }, [isSnow]);
 
   const isPlaySnow = useCallback((): void => {
     dispatch(changeIsSnow(!isSnow));
@@ -56,6 +67,25 @@ export const SnowAudioComponent = (): ReturnComponentType => {
           className={isSnow ? style.ActiveButton : style.inActiveButton}
         />
       </button>
+      <div className="snow" id="snow">
+        {snowflakes.map((snow, index) => (
+          <div
+            key={snow.id}
+            className="snow__flake"
+            style={{
+              fontSize: `${snow.fontSize}`,
+              animationDuration: `${snow.animationDuration}`,
+              animationDelay: `${snow.animationDelay}`,
+            }}
+          >
+            <span
+              className={index % two ? 'snow__flake-into_right' : 'snow__flake-into_left'}
+            >
+              *
+            </span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

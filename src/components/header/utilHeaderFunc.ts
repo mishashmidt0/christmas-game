@@ -1,13 +1,17 @@
 import InputBase from '@mui/material/InputBase';
 import { alpha, styled } from '@mui/material/styles';
 
+const value1 = 0.15;
+const value2 = 0.25;
+const value3 = 4;
+
 export const Search = styled('div')(
   ({ theme: { shape, palette, breakpoints, spacing } }) => ({
     position: 'relative',
     borderRadius: shape.borderRadius,
-    backgroundColor: alpha(palette.common.white, 0.15),
+    backgroundColor: alpha(palette.common.white, value1),
     '&:hover': {
-      backgroundColor: alpha(palette.common.white, 0.25),
+      backgroundColor: alpha(palette.common.white, value2),
     },
     marginLeft: 0,
     width: '100%',
@@ -19,7 +23,7 @@ export const Search = styled('div')(
 );
 
 export const SearchIconWrapper = styled('div')(({ theme: { spacing } }) => ({
-  padding: spacing(0, 2),
+  padding: spacing(0, '2'),
   height: '100%',
   position: 'absolute',
   pointerEvents: 'none',
@@ -34,7 +38,7 @@ export const StyledInputBase = styled(InputBase)(
     '& .MuiInputBase-input': {
       padding: spacing(1, 1, 1, 0),
       // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${spacing(4)})`,
+      paddingLeft: `calc(1em + ${spacing(value3)})`,
       transition: transitions.create('width'),
       width: '100%',
       [breakpoints.up('sm')]: {

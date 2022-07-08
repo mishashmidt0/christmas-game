@@ -1,6 +1,6 @@
 import { createSlice, Dispatch } from '@reduxjs/toolkit';
 
-import { cardsApi } from '../../../api/cards-api';
+import { CardsApi } from '../../../api/cards-api';
 
 const initialState: cardsType[] = [];
 
@@ -28,7 +28,7 @@ export const { setCards, chosenCard, resetActiveCards } = cardsSlice.actions;
 
 // thunk
 export const setCardsTC = () => (dispatch: Dispatch<any>) => {
-  cardsApi.setCards().then(res => {
+  CardsApi.setCards().then(res => {
     dispatch(setCards({ state: res }));
   });
 };

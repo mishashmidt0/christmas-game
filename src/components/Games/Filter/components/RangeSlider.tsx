@@ -8,9 +8,9 @@ import { useDispatch } from 'react-redux';
 
 import style from '../style/styleRange.module.css';
 
-function valuetext(value: number) {
+const valuetext = (value: number): string => {
   return `${value}`;
-}
+};
 
 type RangeSliderType = {
   currentValue: number[];
@@ -19,7 +19,7 @@ type RangeSliderType = {
   min: number;
 };
 
-export const RangeSlider: FC<RangeSliderType> = React.memo(props => {
+export const RangeSlider: FC<RangeSliderType> = React.memo((props: RangeSliderType) => {
   const { currentValue, AC, max, min } = props;
   const dispatch = useDispatch();
   const [start, end] = currentValue;
