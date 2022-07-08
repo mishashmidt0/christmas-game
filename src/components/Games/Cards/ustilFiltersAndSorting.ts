@@ -1,14 +1,6 @@
-import { cardsType, keyDataType } from '../../../store/cardsSlice';
-import {
-  filterRangeAndSortType,
-  keyRangeType,
-} from '../../../store/filterRangeAndSortSlice';
-import {
-  filterType,
-  keyType,
-  Property,
-  valueType,
-} from '../../../store/filterValueSlice';
+import { cardsType, keyDataType } from '../slice/cardsSlice';
+import { filterRangeAndSortType, keyRangeType } from '../slice/filterRangeAndSortSlice';
+import { filterType, keyType, Property, valueType } from '../slice/filterValueSlice';
 
 export enum Sort {
   nameAZ = '10',

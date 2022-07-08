@@ -3,11 +3,11 @@ import React, { useEffect, useMemo } from 'react';
 import { Dispatch } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { cardsType, setCardsTC } from '../../../store/cardsSlice';
-import { filterRangeAndSortType } from '../../../store/filterRangeAndSortSlice';
-import { filterType } from '../../../store/filterValueSlice';
 import { storeType } from '../../../store/redux';
 import { ReturnComponentType } from '../../../types';
+import { cardsType, setCardsTC } from '../slice/cardsSlice';
+import { filterRangeAndSortType } from '../slice/filterRangeAndSortSlice';
+import { filterType } from '../slice/filterValueSlice';
 
 import { Card } from './Card';
 import { Preloader } from './Preloader';

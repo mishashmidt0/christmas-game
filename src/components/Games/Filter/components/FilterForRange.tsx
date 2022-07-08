@@ -4,6 +4,8 @@ import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
 import { useSelector } from 'react-redux';
 
 import { FilterRangeTitle } from '../../../../enums/enumForFilter';
+import { storeType } from '../../../../store/redux';
+import { ReturnComponentType } from '../../../../types';
 import {
   changeAmount,
   changeYear,
@@ -11,9 +13,7 @@ import {
   endYear,
   startCount,
   startYear,
-} from '../../../../store/filterRangeAndSortSlice';
-import { storeType } from '../../../../store/redux';
-import { ReturnComponentType } from '../../../../types';
+} from '../../slice/filterRangeAndSortSlice';
 import style from '../style/styleRange.module.css';
 
 import { RangeSlider } from './RangeSlider';

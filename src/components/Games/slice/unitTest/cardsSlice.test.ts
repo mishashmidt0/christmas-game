@@ -1,7 +1,6 @@
 import cardsSlice, {
   cardsType,
   chosenCard,
-  dataType,
   resetActiveCards,
   setCards,
 } from '../cardsSlice';

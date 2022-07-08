@@ -1,17 +1,17 @@
 import data from './data';
 
-class CardsApi {
+const ms = 2000;
+
+export const CardsApi = {
   setCards() {
     return new Promise((res, rej) => {
       try {
         setTimeout(() => {
           res(data);
-        }, 2000);
+        }, ms);
       } catch (err) {
         rej(err);
       }
     });
-  }
-}
-
-export const cardsApi = new CardsApi();
+  },
+};

@@ -1,4 +1,15 @@
-import { changeColor, changeFavorite, changeForm, changeSize, Color, filterType, filterValueSlice, Property, Shape, Size } from '../filterValueSlice';
+import {
+  changeColor,
+  changeFavorite,
+  changeForm,
+  changeSize,
+  Color,
+  filterType,
+  filterValueSlice,
+  Property,
+  Shape,
+  Size,
+} from '../filterValueSlice';
 
 let initialState: filterType;
 
@@ -35,6 +46,7 @@ test('should be change isActive from form toys', () => {
     initialState,
     changeForm({ name: Shape.bell, isActive: true }),
   );
+
   expect(endState.shape[0].name).toBe('шар');
   expect(endState.shape[0].isActive).toBe(true);
 });
@@ -43,22 +55,27 @@ test('should be change isActive from color', () => {
     initialState,
     changeColor({ name: Color.red, isActive: true }),
   );
-  expect(endState.color[2].name).toBe('красный');
-  expect(endState.color[2].isActive).toBe(true);
+  const index = 2;
+
+  expect(endState.color[index].name).toBe('красный');
+  expect(endState.color[index].isActive).toBe(true);
 });
 test('should be change isActive from size', () => {
   const endState = filterValueSlice.reducer(
     initialState,
     changeSize({ name: Size.small, isActive: true }),
   );
-  expect(endState.size[2].name).toBe('малый');
-  expect(endState.size[2].isActive).toBe(true);
+  const index = 2;
+
+  expect(endState.size[index].name).toBe('малый');
+  expect(endState.size[index].isActive).toBe(true);
 });
 test('should be change isActive from favorite', () => {
   const endState = filterValueSlice.reducer(
     initialState,
     changeFavorite({ name: Property.favorite, isActive: true }),
   );
+
   expect(endState.favorite[0].name).toBe('favorite');
   expect(endState.favorite[0].isActive).toBe(true);
 });

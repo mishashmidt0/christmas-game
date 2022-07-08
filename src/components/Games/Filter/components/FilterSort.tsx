@@ -5,10 +5,10 @@ import { useDispatch } from 'react-redux';
 
 import { SortTitle } from '../../../../enums/enumForFilter';
 import { resetIsActiveToys } from '../../../../store/appSlice';
-import { resetActiveCards } from '../../../../store/cardsSlice';
-import { changeSort, resetRange } from '../../../../store/filterRangeAndSortSlice';
-import { resetValue } from '../../../../store/filterValueSlice';
 import { ReturnComponentType } from '../../../../types';
+import { resetActiveCards } from '../../slice/cardsSlice';
+import { changeSort, resetRange } from '../../slice/filterRangeAndSortSlice';
+import { resetValue } from '../../slice/filterValueSlice';
 import style from '../style/styleSort.module.css';
 
 import { SelectComponent } from './SelectComponent';

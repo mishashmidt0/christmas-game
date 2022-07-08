@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-
 export const startCount = 1;
 export const endCount = 12;
 export const startYear = 1940;
@@ -15,7 +14,7 @@ const initialState: filterRangeAndSortType = {
 
 const filterRangeAndSortSlice = createSlice({
   name: 'filterRangeAndSort',
-  initialState: initialState,
+  initialState,
   reducers: {
     changeAmount(state, { payload }) {
       return { ...state, count: [...payload.newValue] };

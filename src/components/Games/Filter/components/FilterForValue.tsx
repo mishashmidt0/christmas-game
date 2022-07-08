@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuid4 } from 'uuid';
 
 import { FilterValueTitle } from '../../../../enums/enumForFilter';
+import { storeType } from '../../../../store/redux';
+import { ReturnComponentType } from '../../../../types';
 import {
   changeColor,
   changeFavorite,
@@ -13,9 +15,7 @@ import {
   keyType,
   Property,
   valueType,
-} from '../../../../store/filterValueSlice';
-import { storeType } from '../../../../store/redux';
-import { ReturnComponentType } from '../../../../types';
+} from '../../slice/filterValueSlice';
 import style from '../style/styleValue.module.css';
 
 export const FilterForValue = (): ReturnComponentType => {

@@ -1,0 +1,72 @@
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(calc(100vh + 1.5em));
+    }
+}
+@-moz-keyframes spin-right {
+    100% { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin-right {
+    100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin-right {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform:rotate(360deg);
+    }
+}
+
+@-moz-keyframes spin-left {
+    100% { -moz-transform: rotate(-360deg); }
+}
+@-webkit-keyframes spin-left {
+    100% { -webkit-transform: rotate(-360deg); }
+}
+@keyframes spin-left {
+    100% {
+        -webkit-transform: rotate(-360deg);
+        transform:rotate(-360deg);
+    }
+}
+
+.snow {
+    --animation-name: snowfall;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.snow__flake {
+    position: relative;
+    top: -1.5em;
+    color: #c1dcec;
+    animation-name: var(--animation-name);
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    will-change: transform;
+}
+
+.snow__flake-into_right {
+    position: absolute;
+    -webkit-animation:spin-right 4s linear infinite;
+    -moz-animation:spin-right 4s linear infinite;
+    animation:spin-right 4s linear infinite;
+}
+
+.snow__flake-into_left {
+    position: absolute;
+    -webkit-animation:spin-left 4s linear infinite;
+    -moz-animation:spin-left 4s linear infinite;
+    animation:spin-left 4s linear infinite;
+}

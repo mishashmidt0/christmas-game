@@ -3,7 +3,7 @@ import appSlice, {
   changeActiveToys,
   changeHeaderHidden,
   resetIsActiveToys,
-} from '../appSlice';
+} from '../../../../store/appSlice';
 
 let initialState: appType;
 
@@ -21,9 +21,10 @@ test('should be change headerHidden', () => {
 });
 
 test('should be change activeToys', () => {
-  const endState = appSlice(initialState, changeActiveToys({ value: 10 }));
+  const value = 10;
+  const endState = appSlice(initialState, changeActiveToys({ value }));
 
-  expect(endState.activeToys).toBe(10);
+  expect(endState.activeToys).toBe(value);
 });
 
 test('should be reset activeToys', () => {

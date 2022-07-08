@@ -22,6 +22,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
+    "redux-thunk": "^2.4.1",
     "typescript": "^4.4.2",
     "uuid": "^8.3.2",
     "web-vitals": "^2.1.0"
@@ -31,19 +32,11 @@
     "build": "react-scripts build",
     "test": "jest",
     "eject": "react-scripts eject",
-    "prepare": "husky install",
     "lint-fix": "eslint --fix"
   },
   "lint-staged": {
     "**/*.{js,ts,jsx,tsx}": [
-      "npm run lint-fix",
       "prettier --write"
-    ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
     ]
   },
   "browserslist": {
@@ -70,7 +63,6 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "husky": "^8.0.0",
     "jest": "^28.1.1",
     "prettier": "^2.7.1",
     "ts-jest": "^28.0.5"

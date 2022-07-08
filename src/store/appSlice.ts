@@ -5,10 +5,9 @@ const initialState: appType = {
   activeToys: 0,
 };
 
-
 const appSlice = createSlice({
   name: 'appSlice',
-  initialState: initialState,
+  initialState,
   reducers: {
     changeHeaderHidden(state, { payload: { value } }) {
       return { ...state, headerHidden: value };
@@ -21,6 +20,7 @@ const appSlice = createSlice({
     },
   },
 });
+
 export default appSlice.reducer;
 
 // action

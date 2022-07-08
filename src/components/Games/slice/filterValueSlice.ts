@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { changeFilter } from './helpers/utilReducer';
 
 export enum Property {
@@ -30,9 +31,7 @@ export enum Size {
   big = 'большой',
   middle = 'средний',
   small = 'малый',
-
 }
-
 
 const initialState: filterType = {
   shape: [
@@ -62,7 +61,7 @@ const initialState: filterType = {
 
 export const filterValueSlice = createSlice({
   name: 'filterValue',
-  initialState: initialState,
+  initialState,
   reducers: {
     changeForm(state, { payload }) {
       return changeFilter(state, payload.name, payload.isActive, Property.shape);
