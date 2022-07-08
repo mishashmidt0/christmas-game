@@ -1,19 +1,19 @@
 import { v4 as uuidv4 } from 'uuid';
 
-import snow from '../../../data/assets/svg/snow.svg';
+import snow from '../../../../data/assets/svg/snow.svg';
+import {
+  animation,
+  floatEnd,
+  floatStart,
+  integerEnd,
+  integerStart,
+  maxSnow,
+} from '../../constant/constant';
+import { Snow } from '../../types/types';
 
-export type Snow = {
-  id: string;
-  url: string;
-  fontSize: string;
-  animationDuration: string;
-  animationDelay: string;
-};
 const snowArr: Snow[] = [];
 
-const max = 30;
-
-for (let i = 0; i < max; i += 1) {
+for (let i = 0; i < maxSnow; i += 1) {
   snowArr.push({
     id: uuidv4(),
     url: snow,
@@ -29,11 +29,6 @@ export const getRndInteger = (min: number, max: number): number => {
 export const getRndFloat = (min: number, max: number): number => {
   return +(Math.random() * (max - min) + min).toFixed(1);
 };
-const floatStart = 0.4;
-const floatEnd = 2.2;
-const integerStart = 20;
-const integerEnd = 35;
-const animation = 2;
 
 export const snowflakes = snowArr.map(snow => ({
   ...snow,

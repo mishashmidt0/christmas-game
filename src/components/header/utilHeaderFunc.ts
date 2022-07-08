@@ -1,17 +1,17 @@
 import InputBase from '@mui/material/InputBase';
 import { alpha, styled } from '@mui/material/styles';
 
-const value1 = 0.15;
-const value2 = 0.25;
-const value3 = 4;
+export const transparencyValueBgc1 = 0.15;
+export const transparencyValueBgc2 = 0.25;
+export const spacingValue = 4;
 
 export const Search = styled('div')(
   ({ theme: { shape, palette, breakpoints, spacing } }) => ({
     position: 'relative',
     borderRadius: shape.borderRadius,
-    backgroundColor: alpha(palette.common.white, value1),
+    backgroundColor: alpha(palette.common.white, transparencyValueBgc1),
     '&:hover': {
-      backgroundColor: alpha(palette.common.white, value2),
+      backgroundColor: alpha(palette.common.white, transparencyValueBgc2),
     },
     marginLeft: 0,
     width: '100%',
@@ -38,7 +38,7 @@ export const StyledInputBase = styled(InputBase)(
     '& .MuiInputBase-input': {
       padding: spacing(1, 1, 1, 0),
       // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${spacing(value3)})`,
+      paddingLeft: `calc(1em + ${spacing(spacingValue)})`,
       transition: transitions.create('width'),
       width: '100%',
       [breakpoints.up('sm')]: {

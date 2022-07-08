@@ -3,7 +3,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
-import { PATH } from '../../enums/path';
+import { PATH } from '../../enums/headerEnums';
 import { ChristmasTree } from '../../page/ChristmasTree';
 import { Games } from '../../page/Games';
 import { Main } from '../../page/Main';
