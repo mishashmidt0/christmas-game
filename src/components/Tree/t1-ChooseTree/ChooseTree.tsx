@@ -17,31 +17,27 @@ export const ChooseTree = (): ReturnComponentType => {
     useActive(id);
   };
 
-  const createBlock = (): ReturnComponentType => {
-    return (
-      <>
-        <h2 className={style.headerTitle}>{ChooseTreeTitle.header}</h2>
-        <div className={style.bgTree}>
-          {arrTree.map(tree => (
-            <div
-              role="button"
-              tabIndex={0}
-              key={tree.id}
-              onClick={() => {
-                ChoseTree(tree.id, tree.url);
-              }}
-              onKeyPress={() => {
-                ChoseTree(tree.id, tree.url);
-              }}
-              className={active === tree.id ? style.activeTree : ''}
-            >
-              <img src={tree.url} alt={ChooseTreeTitle.tree} />
-            </div>
-          ))}
-        </div>{' '}
-      </>
-    );
-  };
-
-  return <div>{createBlock()}</div>;
+  return (
+    <div>
+      <h2 className={style.headerTitle}>{ChooseTreeTitle.header}</h2>
+      <div className={style.bgTree}>
+        {arrTree.map(tree => (
+          <div
+            role="button"
+            tabIndex={0}
+            key={tree.id}
+            onClick={() => {
+              ChoseTree(tree.id, tree.url);
+            }}
+            onKeyPress={() => {
+              ChoseTree(tree.id, tree.url);
+            }}
+            className={active === tree.id ? style.activeTree : ''}
+          >
+            <img src={tree.url} alt={ChooseTreeTitle.tree} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };

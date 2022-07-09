@@ -3,6 +3,7 @@ import React from 'react';
 import { ChooseTree } from '../components/Tree/t1-ChooseTree/ChooseTree';
 import { SnowAudioComponent } from '../components/Tree/t2-SnowAndSound/SnowAudioComponent';
 import { ChristmasTreeWall } from '../components/Tree/t3-ChristmasTreeWall/ChristmasTreeWall';
+import { ChooseBg } from '../components/Tree/t4-ChooseBg/ChooseBg';
 import { ReturnComponentType } from '../types';
 
 import style from './style/mainStyle.module.css';
@@ -13,6 +14,7 @@ export const ChristmasTree = (): ReturnComponentType => {
       <div>
         <SnowAudioComponent />
         <ChooseTree />
+        <ChooseBg />
       </div>
 
       <ChristmasTreeWall />
