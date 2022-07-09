@@ -3,9 +3,9 @@ import React, { useCallback, useEffect } from 'react';
 import snow from '../../../../data/assets/svg/snow.svg';
 import { useAppDispatch, useAppSelector } from '../../../../store/redux';
 import { ReturnComponentType } from '../../../../types';
-import { balanceCheck } from '../../constant/constant';
-import { SnowStyle } from '../../enums/enums';
-import { changeIsSnow } from '../../slice/ChristmasTreeSlice-slice';
+import { balanceCheck } from '../../t10-constant/constant';
+import { SnowStyle } from '../../t11-enums/enums';
+import { changeIsSnow } from '../../t8-slice/ChristmasTreeSlice-slice';
 import style from '../style/SnowAndSound.module.css';
 import { changeSnowAnimation, snowflakes } from '../util/utils-Snowflaks';
 

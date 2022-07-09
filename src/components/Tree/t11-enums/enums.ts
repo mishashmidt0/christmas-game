@@ -7,3 +7,8 @@ export enum SnowStyle {
   snowfall = 'snowfall',
   none = 'none',
 }
+
+export enum ChooseTreeTitle {
+  header = 'Выберите ёлку',
+  tree = 'tree',
+}

@@ -4,7 +4,7 @@ import { CardsApi } from '../../../api/cards-api';
 
 const initialState: cardsType[] = [];
 
-// slice
+// t8-slice
 const cardsSlice = createSlice({
   name: 'cardsSlice',
   initialState,
