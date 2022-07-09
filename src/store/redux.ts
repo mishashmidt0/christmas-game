@@ -9,7 +9,7 @@ import {
   changeIsSnow,
   changeIsSound,
   ChristmasTreeSlice,
-} from '../components/Tree/slice/ChristmasTreeSlice-slice';
+} from '../components/Tree/t8-slice/ChristmasTreeSlice-slice';
 
 import appSlice from './appSlice';
 

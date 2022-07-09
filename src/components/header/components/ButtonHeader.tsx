@@ -15,7 +15,9 @@ export const ButtonHeader = (): ReturnComponentType => {
       <IconButton onClick={() => navigate('/')} color="inherit">
         <AcUnitIcon color="inherit" fontSize="large" />
       </IconButton>
-      <Button onClick={() => navigate(PATH.Game)}>{HeaderTitle.game}</Button>
+      <Button variant="text" color="inherit" onClick={() => navigate(PATH.Game)}>
+        {HeaderTitle.game}
+      </Button>
       <Button variant="text" color="inherit" onClick={() => navigate(PATH.ChristmasTree)}>
         {HeaderTitle.tree}
       </Button>

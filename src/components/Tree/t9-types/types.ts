@@ -5,3 +5,8 @@ export type Snow = {
   animationDuration: string;
   animationDelay: string;
 };
+
+export type treeArrType = {
+  url: string;
+  id: string;
+};

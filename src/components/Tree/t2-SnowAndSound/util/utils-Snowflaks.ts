@@ -8,8 +8,8 @@ import {
   integerEnd,
   integerStart,
   maxSnow,
-} from '../../constant/constant';
-import { Snow } from '../../types/types';
+} from '../../t10-constant/constant';
+import { Snow } from '../../t9-types/types';
 
 const snowArr: Snow[] = [];
 

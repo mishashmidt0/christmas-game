@@ -5,7 +5,7 @@ import audio from '../../../data/assets/svg/audio.svg';
 import mute from '../../../data/assets/svg/mute.svg';
 import { useAppDispatch, useAppSelector } from '../../../store/redux';
 import { ReturnComponentType } from '../../../types';
-import { changeIsSound } from '../slice/ChristmasTreeSlice-slice';
+import { changeIsSound } from '../t8-slice/ChristmasTreeSlice-slice';
 
 import './style/animationSnow.css';
 import { Snowflakes } from './SnowComponents/Snowflakes';
@@ -19,8 +19,8 @@ export const SnowAudioComponent = (): ReturnComponentType => {
 
   const isPlaySound = useCallback((): void => {
     dispatch(changeIsSound(!isSound));
-
-    (!isSound ? ChristmasSound.play : ChristmasSound.pause)();
+    // eslint-disable-next-line no-unused-expressions
+    !isSound ? ChristmasSound.play() : ChristmasSound.pause();
   }, [isSound]);
 
   return (

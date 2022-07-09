@@ -36,7 +36,7 @@ export const Header = React.memo((): ReturnComponentType => {
 
             <Search>
               <SearchIconWrapper>
-                <SearchIcon />
+                <SearchIcon style={{ padding: '0 10px' }} />
               </SearchIconWrapper>
               <StyledInputBase
                 placeholder="Search…"
