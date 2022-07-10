@@ -2,12 +2,15 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import InitBg from '../../../data/assets/bg/3.jpg';
 import InitTree from '../../../data/assets/tree/3.png';
+import { activeTree } from '../t9-types/types';
 
 const initialState: initialType = {
   isSnow: false,
   isSound: false,
   tree: InitTree,
   bg: InitBg,
+  activeToy: [],
+  takenToy: null,
 };
 
 export const ChristmasTreeSlice = createSlice({
@@ -26,12 +29,31 @@ export const ChristmasTreeSlice = createSlice({
     changeBg(state, { payload }) {
       return { ...state, bg: payload };
     },
+    takenToy(state, { payload }) {
+      return { ...state, takenToy: payload };
+    },
+    addActiveToy(state, { payload }) {
+      return { ...state, activeToy: [...state.activeToy, payload] };
+    },
+    deleteActiveToy(state, { payload }) {
+      return {
+        ...state,
+        activeToy: state.activeToy.filter(toy => toy.id !== payload.id),
+      };
+    },
   },
 });
 
 // action
-export const { changeIsSnow, changeIsSound, changeTree, changeBg } =
-  ChristmasTreeSlice.actions;
+export const {
+  changeIsSnow,
+  changeIsSound,
+  changeTree,
+  changeBg,
+  addActiveToy,
+  deleteActiveToy,
+  takenToy,
+} = ChristmasTreeSlice.actions;
 
 // type
 export type initialType = {
@@ -39,4 +61,6 @@ export type initialType = {
   isSound: boolean;
   tree: string;
   bg: string;
+  takenToy: activeTree | null;
+  activeToy: activeTree[];
 };

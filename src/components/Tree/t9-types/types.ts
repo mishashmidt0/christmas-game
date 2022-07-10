@@ -9,4 +9,21 @@ export type Snow = {
 export type treeArrType = {
   url: string;
   id: string;
+  count?: string;
+  style?: {};
+  shiftX?: number;
+  shiftY?: number;
+};
+export type activeTree = {
+  url: string;
+  id: string;
+  count?: string;
+  style: styleToy;
+  shiftX?: number;
+  shiftY?: number;
+};
+type styleToy = {
+  position: string;
+  left: number;
+  top: number;
 };

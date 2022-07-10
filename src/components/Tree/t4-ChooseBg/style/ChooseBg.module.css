@@ -1,30 +1,22 @@
-.headerTitle{
-    color: white;
-    font-size: 24px;
-    padding: 0 10px;
-    font-weight: 400;
-    text-transform: uppercase;
-}
-
-.bgTree{
-    display: flex;
-    padding: 0 10px;
-    align-items: center;
-    gap: 5px;
-    width: 365px;
-    flex-wrap: wrap;
+.bgTree {
+  display: flex;
+  padding: 0 10px;
+  align-items: center;
+  gap: 5px;
+  width: 365px;
+  flex-wrap: wrap;
 }
 .bgTree div {
-    cursor: pointer;
-    width: 80px;
-    height: 45px;
-    background-repeat:no-repeat;
-    background-size:cover;
-    border: 2px solid rgba(167, 136, 0, 0);
+  cursor: pointer;
+  width: 80px;
+  height: 45px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 2px solid rgba(167, 136, 0, 0);
 }
-.bgTree div:hover{
-    border: 2px solid #a78800;
+.bgTree div:hover {
+  border: 2px solid #a78800;
 }
-.bgTree .activeBg{
-    border: 2px solid #a78800;
+.bgTree .activeBg {
+  border: 2px solid #a78800;
 }

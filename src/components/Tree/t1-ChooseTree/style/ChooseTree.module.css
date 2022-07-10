@@ -1,38 +1,38 @@
-.headerTitle{
-    color: white;
-    font-size: 24px;
-    padding: 0 10px;
-    font-weight: 400;
-    text-transform: uppercase;
+.headerTitle {
+  color: white;
+  font-size: 24px;
+  padding: 0 10px;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
-.bgTree{
-    display: flex;
-    padding: 0 10px;
-    align-items: center;
-    gap: 10px;
-    width: 365px;
-    flex-wrap: wrap;
+.bgTree {
+  display: flex;
+  padding: 0 10px;
+  align-items: center;
+  gap: 10px;
+  width: 365px;
+  flex-wrap: wrap;
 }
 .bgTree div {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 115px;
-    height: 115px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, .5);
-    background-size: auto 110px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 115px;
+  height: 115px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  background-size: auto 110px;
 }
-.bgTree img{
-    width: 90px;
-    height: 115px;
+.bgTree img {
+  width: 90px;
+  height: 115px;
 }
-.bgTree div:hover{
-    background-color: rgba(169, 136, 0, 0.6);
+.bgTree div:hover {
+  background-color: rgba(169, 136, 0, 0.6);
 }
 
 .bgTree .activeTree {
-    background-color: rgba(169, 136, 0, 0.6);
+  background-color: rgba(169, 136, 0, 0.6);
 }

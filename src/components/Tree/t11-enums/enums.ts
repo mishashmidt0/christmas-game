@@ -12,3 +12,7 @@ export enum ChooseTreeTitle {
   header = 'Выберите ёлку',
   tree = 'tree',
 }
+export enum ToysTitle {
+  header = 'игрушки',
+  warning = 'Выберите игрушки что бы нарядить елку',
+}

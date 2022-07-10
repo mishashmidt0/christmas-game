@@ -1,11 +1,10 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useMemo } from 'react';
 
-import { Dispatch } from '@reduxjs/toolkit';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { storeType } from '../../../store/redux';
 import { ReturnComponentType } from '../../../types';
-import { cardsType, setCardsTC } from '../slice/cardsSlice';
+import { cardsType } from '../slice/cardsSlice';
 import { filterRangeAndSortType } from '../slice/filterRangeAndSortSlice';
 import { filterType } from '../slice/filterValueSlice';
 
@@ -15,15 +14,10 @@ import style from './styleCards.module.css';
 import { allFilters, searching, sorting } from './ustilFiltersAndSorting';
 
 export const Cards = (): ReturnComponentType => {
-  const dispatch = useDispatch<Dispatch<any>>();
   const cards = useSelector<storeType, cardsType[]>(state => state.cards);
   const filterValue = useSelector<storeType, filterType>(state => state.filterValue);
   const filter = useSelector<storeType, filterRangeAndSortType>(state => state.filter);
   const { count, year, sort, search } = filter;
-
-  useEffect(() => {
-    dispatch(setCardsTC());
-  }, []);
 
   // Здесь массив карт, которые проходят 3 стадии, фильтр по значению, сортировке и поиску.
 

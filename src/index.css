@@ -17,3 +17,11 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+h2 {
+  color: white;
+  font-size: 24px;
+  padding: 0 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
