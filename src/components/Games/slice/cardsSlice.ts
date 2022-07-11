@@ -18,13 +18,29 @@ const cardsSlice = createSlice({
     resetActiveCards(state) {
       return state.map((c: cardsType) => ({ ...c, isChosen: false }));
     },
+    removeTheNumberOfOneToy(state, { payload }) {
+      return state.map((c: cardsType) =>
+        c.num === payload ? { ...c, count: (+c.count - 1).toString() } : { ...c },
+      );
+    },
+    addedTheNumberOfOneToy(state, { payload }) {
+      return state.map((c: cardsType) =>
+        c.num === payload ? { ...c, count: (+c.count + 1).toString() } : { ...c },
+      );
+    },
   },
 });
 
 export default cardsSlice.reducer;
 
 // action
-export const { setCards, chosenCard, resetActiveCards } = cardsSlice.actions;
+export const {
+  setCards,
+  chosenCard,
+  resetActiveCards,
+  removeTheNumberOfOneToy,
+  addedTheNumberOfOneToy,
+} = cardsSlice.actions;
 
 // thunk
 export const setCardsTC = () => (dispatch: Dispatch<any>) => {

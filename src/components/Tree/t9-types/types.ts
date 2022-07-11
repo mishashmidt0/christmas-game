@@ -15,6 +15,7 @@ export type treeArrType = {
   shiftY?: number;
 };
 export type activeTree = {
+  num: string;
   url: string;
   id: string;
   count?: string;

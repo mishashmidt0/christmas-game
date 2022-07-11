@@ -9,7 +9,7 @@ const initialState: initialType = {
   isSound: false,
   tree: InitTree,
   bg: InitBg,
-  activeToy: [],
+  toysOnTheTree: [],
   takenToy: null,
 };
 
@@ -32,13 +32,21 @@ export const ChristmasTreeSlice = createSlice({
     takenToy(state, { payload }) {
       return { ...state, takenToy: payload };
     },
-    addActiveToy(state, { payload }) {
-      return { ...state, activeToy: [...state.activeToy, payload] };
+    addToyOnTheTree(state, { payload }) {
+      return { ...state, toysOnTheTree: [...state.toysOnTheTree, payload] };
     },
-    deleteActiveToy(state, { payload }) {
+    moveToyOnTheTree(state, { payload }) {
       return {
         ...state,
-        activeToy: state.activeToy.filter(toy => toy.id !== payload.id),
+        toysOnTheTree: state.toysOnTheTree.map(toy =>
+          toy.id === payload.id ? { ...toy, style: payload.style } : toy,
+        ),
+      };
+    },
+    deleteToyOnTheTree(state, { payload }) {
+      return {
+        ...state,
+        toysOnTheTree: state.toysOnTheTree.filter(toy => toy.id !== payload),
       };
     },
   },
@@ -50,8 +58,9 @@ export const {
   changeIsSound,
   changeTree,
   changeBg,
-  addActiveToy,
-  deleteActiveToy,
+  addToyOnTheTree,
+  deleteToyOnTheTree,
+  moveToyOnTheTree,
   takenToy,
 } = ChristmasTreeSlice.actions;
 
@@ -62,5 +71,5 @@ export type initialType = {
   tree: string;
   bg: string;
   takenToy: activeTree | null;
-  activeToy: activeTree[];
+  toysOnTheTree: activeTree[];
 };

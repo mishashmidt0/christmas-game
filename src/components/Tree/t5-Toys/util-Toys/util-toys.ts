@@ -7,8 +7,13 @@ export const getToyUrl = (num: string): any => {
   return require(`../../../../data/assets/toys/${num}.png`); // eslint-disable-line
 };
 
-export const createArrToys = (toys: cardsType[]): any[] => {
+export const createMyBasketOfToys = (toys: cardsType[]): any[] => {
   return toys
     .filter(toy => toy.isChosen)
-    .map(toy => ({ url: getToyUrl(toy.num), id: uuidv4(), count: toy.count }));
+    .map(toy => ({
+      url: getToyUrl(toy.num),
+      id: uuidv4(),
+      count: toy.count,
+      num: toy.num,
+    }));
 };
