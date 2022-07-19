@@ -11,6 +11,8 @@ const initialState: initialType = {
   bg: InitBg,
   toysOnTheTree: [],
   takenToy: null,
+  saveTree: [],
+  showTree: '',
 };
 
 export const ChristmasTreeSlice = createSlice({
@@ -34,6 +36,15 @@ export const ChristmasTreeSlice = createSlice({
     },
     addToyOnTheTree(state, { payload }) {
       return { ...state, toysOnTheTree: [...state.toysOnTheTree, payload] };
+    },
+    changeSaveTree(state, { payload }) {
+      return { ...state, saveTree: [...state.saveTree, payload] };
+    },
+    changeShowTree(state, { payload }) {
+      return { ...state, showTree: payload };
+    },
+    clearSaveTree(state) {
+      return { ...state, saveTree: [] };
     },
     moveToyOnTheTree(state, { payload }) {
       return {
@@ -62,6 +73,9 @@ export const {
   deleteToyOnTheTree,
   moveToyOnTheTree,
   takenToy,
+  changeSaveTree,
+  changeShowTree,
+  clearSaveTree,
 } = ChristmasTreeSlice.actions;
 
 // type
@@ -72,4 +86,6 @@ export type initialType = {
   bg: string;
   takenToy: activeTree | null;
   toysOnTheTree: activeTree[];
+  saveTree: string[];
+  showTree: string;
 };

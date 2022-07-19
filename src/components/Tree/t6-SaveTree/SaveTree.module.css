@@ -1,0 +1,47 @@
+.SaveTree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.SaveTreeContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    overflow: auto;
+    width: 400px;
+    background-color: rgba(82, 82, 82, 0.42);
+    border-radius: 10px;
+    margin: 10px;
+
+}
+
+.canvasTree {
+    border-radius: 10px;
+    width: 115px !important;
+    height: 115px !important;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.SaveTreeContainer::-webkit-scrollbar {
+    width: 12px; /* ширина scrollbar */
+}
+
+.SaveTreeContainer::-webkit-scrollbar-track {
+    background: rgba(89, 89, 89, 0.51); /* цвет дорожки */
+    border-radius: 20px;
+}
+
+.SaveTreeContainer::-webkit-scrollbar-thumb {
+    background-color: #5dbbf2; /* цвет плашки */
+    border-radius: 20px; /* закругления плашки */
+}
+
+.ButtonContainer {
+    display: flex;
+    gap: 10px;
+}

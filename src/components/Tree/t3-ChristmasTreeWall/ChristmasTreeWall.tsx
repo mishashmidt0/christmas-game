@@ -91,8 +91,6 @@ export const ChristmasTreeWall = (): ReturnComponentType => {
     }
   };
 
-  // html2canvas(document.querySelector('#capture') as HTMLElement)
-
   return (
     <div
       id="capture"
@@ -103,7 +101,7 @@ export const ChristmasTreeWall = (): ReturnComponentType => {
       <map name="tree-map">
         <area
           shape="poly"
-          coords="0,605,123,695,376,700,494,600,251,0"
+          coords="2,600,219,8,314,0,491,528,489,659,136,706,53,669"
           alt="tree"
           onDragOver={handleDragOver}
           onDrop={handleDrop}
