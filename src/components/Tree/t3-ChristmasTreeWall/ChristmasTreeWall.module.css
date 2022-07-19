@@ -18,3 +18,10 @@
   height: 50px;
   cursor: grab;
 }
+.canvas{
+  position: absolute;
+  width: 35%;
+  height: 87%;
+  top: 11%;
+  background-color: rgba(153, 40, 40, 0.42);
+}

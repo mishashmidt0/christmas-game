@@ -91,8 +91,14 @@ export const ChristmasTreeWall = (): ReturnComponentType => {
     }
   };
 
+  // html2canvas(document.querySelector('#capture') as HTMLElement)
+
   return (
-    <div className={style.ChristmasTreeWall} style={{ backgroundImage: `url(${urlBg})` }}>
+    <div
+      id="capture"
+      className={style.ChristmasTreeWall}
+      style={{ backgroundImage: `url(${urlBg})` }}
+    >
       <img src={treeUrl} alt="MainTree" useMap="#tree-map" />
       <map name="tree-map">
         <area
