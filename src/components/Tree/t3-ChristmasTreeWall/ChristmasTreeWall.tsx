@@ -9,6 +9,7 @@ import {
   addedTheNumberOfOneToy,
   removeTheNumberOfOneToy,
 } from '../../Games/slice/cardsSlice';
+import { FireLight } from '../t7.1-FireLight/FireLight';
 import {
   addToyOnTheTree,
   deleteToyOnTheTree,
@@ -97,6 +98,7 @@ export const ChristmasTreeWall = (): ReturnComponentType => {
       className={style.ChristmasTreeWall}
       style={{ backgroundImage: `url(${urlBg})` }}
     >
+      <FireLight />
       <img src={treeUrl} alt="MainTree" useMap="#tree-map" />
       <map name="tree-map">
         <area
