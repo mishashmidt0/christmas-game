@@ -9,6 +9,7 @@ import {
   addedTheNumberOfOneToy,
   removeTheNumberOfOneToy,
 } from '../../Games/slice/cardsSlice';
+import { FireLight } from '../t7.1-FireLight/FireLight';
 import {
   addToyOnTheTree,
   deleteToyOnTheTree,
@@ -22,6 +23,7 @@ export const ChristmasTreeWall = (): ReturnComponentType => {
   const dispatch = useDispatch();
   const [left, useLeft] = useState(false);
   const toysOnTheTreeArr = useAppSelector(state => state.tree.toysOnTheTree);
+
   const takenToy = useAppSelector(state => state.tree.takenToy as activeTree);
   const treeUrl = useAppSelector(state => state.tree.tree);
   const urlBg = useAppSelector(state => state.tree.bg);
@@ -97,6 +99,7 @@ export const ChristmasTreeWall = (): ReturnComponentType => {
       className={style.ChristmasTreeWall}
       style={{ backgroundImage: `url(${urlBg})` }}
     >
+      <FireLight />
       <img src={treeUrl} alt="MainTree" useMap="#tree-map" />
       <map name="tree-map">
         <area

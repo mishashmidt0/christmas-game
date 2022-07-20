@@ -1,6 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
+  "homepage": "https://mishashmidt0.github.io/christmas-game",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.3",
@@ -16,7 +17,9 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "axios": "^0.27.2",
+    "gh-pages": "^4.0.0",
     "html2canvas": "^1.4.1",
+    "node-sass": "^7.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
@@ -35,6 +38,8 @@
     "eject": "react-scripts eject",
     "lint-fix": "eslint --fix",
     "prepare": "husky install",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "pr": "prettier --write ."
   },
   "lint-staged": {

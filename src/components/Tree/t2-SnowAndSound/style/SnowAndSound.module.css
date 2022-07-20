@@ -1,6 +1,6 @@
 .SnowAndSound {
   width: 100px;
-  padding: 40px 40px 0 40px;
+  padding: 20px 40px 0 20px;
   display: flex;
   justify-content: space-between;
 }
