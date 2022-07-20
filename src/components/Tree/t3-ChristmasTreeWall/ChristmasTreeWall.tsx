@@ -23,6 +23,7 @@ export const ChristmasTreeWall = (): ReturnComponentType => {
   const dispatch = useDispatch();
   const [left, useLeft] = useState(false);
   const toysOnTheTreeArr = useAppSelector(state => state.tree.toysOnTheTree);
+
   const takenToy = useAppSelector(state => state.tree.takenToy as activeTree);
   const treeUrl = useAppSelector(state => state.tree.tree);
   const urlBg = useAppSelector(state => state.tree.bg);

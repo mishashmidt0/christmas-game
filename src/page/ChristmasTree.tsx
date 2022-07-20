@@ -7,6 +7,7 @@ import { ChooseBg } from '../components/Tree/t4-ChooseBg/ChooseBg';
 import { Toys } from '../components/Tree/t5-Toys/Toys';
 import { SaveTree } from '../components/Tree/t6-SaveTree/SaveTree';
 import { PopupTree } from '../components/Tree/t7-PopupTree/PopupTree';
+import { FireLightButton } from '../components/Tree/t7.2-FireLightButton/FireLightButton';
 import { ReturnComponentType } from '../types';
 
 import style from './style/mainStyle.module.css';
@@ -19,6 +20,7 @@ export const ChristmasTree = (): ReturnComponentType => {
         <SnowAudioComponent />
         <ChooseTree />
         <ChooseBg />
+        <FireLightButton />
       </div>
 
       <ChristmasTreeWall />

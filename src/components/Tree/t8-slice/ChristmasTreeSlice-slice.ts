@@ -13,6 +13,8 @@ const initialState: initialType = {
   takenToy: null,
   saveTree: [],
   showTree: '',
+  fireLight: '',
+  isSwitch: false,
 };
 
 export const ChristmasTreeSlice = createSlice({
@@ -37,6 +39,9 @@ export const ChristmasTreeSlice = createSlice({
     addToyOnTheTree(state, { payload }) {
       return { ...state, toysOnTheTree: [...state.toysOnTheTree, payload] };
     },
+    clearToyOnTheTree(state) {
+      return { ...state, toysOnTheTree: [] };
+    },
     changeSaveTree(state, { payload }) {
       return { ...state, saveTree: [...state.saveTree, payload] };
     },
@@ -45,6 +50,12 @@ export const ChristmasTreeSlice = createSlice({
     },
     clearSaveTree(state) {
       return { ...state, saveTree: [] };
+    },
+    changeFireLight(state, { payload }) {
+      return { ...state, fireLight: payload };
+    },
+    changeIsSwitch(state, { payload }) {
+      return { ...state, isSwitch: payload };
     },
     moveToyOnTheTree(state, { payload }) {
       return {
@@ -70,12 +81,15 @@ export const {
   changeTree,
   changeBg,
   addToyOnTheTree,
+  clearToyOnTheTree,
   deleteToyOnTheTree,
   moveToyOnTheTree,
   takenToy,
   changeSaveTree,
   changeShowTree,
   clearSaveTree,
+  changeFireLight,
+  changeIsSwitch,
 } = ChristmasTreeSlice.actions;
 
 // type
@@ -88,4 +102,6 @@ export type initialType = {
   toysOnTheTree: activeTree[];
   saveTree: string[];
   showTree: string;
+  fireLight: string;
+  isSwitch: boolean;
 };
