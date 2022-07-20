@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/christmas-game/static/css/main.12020ca9.css",
-    "main.js": "/christmas-game/static/js/main.457bd142.js",
+    "main.css": "/christmas-game/static/css/main.56b9fc5e.css",
+    "main.js": "/christmas-game/static/js/main.d245305f.js",
     "static/js/787.28cb0dcd.chunk.js": "/christmas-game/static/js/787.28cb0dcd.chunk.js",
     "static/media/audio.mp3": "/christmas-game/static/media/audio.12ff3f91a9999f3503e6.mp3",
     "static/media/3.jpg": "/christmas-game/static/media/3.a7579227151cefbf1659.jpg",
@@ -85,12 +85,12 @@
     "static/media/bell.svg": "/christmas-game/static/media/bell.bb18e4cea62da25074aa.svg",
     "static/media/ball.svg": "/christmas-game/static/media/ball.02ba2b1b2ea99d65f6d4.svg",
     "index.html": "/christmas-game/index.html",
-    "main.12020ca9.css.map": "/christmas-game/static/css/main.12020ca9.css.map",
-    "main.457bd142.js.map": "/christmas-game/static/js/main.457bd142.js.map",
+    "main.56b9fc5e.css.map": "/christmas-game/static/css/main.56b9fc5e.css.map",
+    "main.d245305f.js.map": "/christmas-game/static/js/main.d245305f.js.map",
     "787.28cb0dcd.chunk.js.map": "/christmas-game/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.12020ca9.css",
-    "static/js/main.457bd142.js"
+    "static/css/main.56b9fc5e.css",
+    "static/js/main.d245305f.js"
   ]
 }
